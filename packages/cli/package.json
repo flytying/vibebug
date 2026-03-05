@@ -1,0 +1,41 @@
+{
+  "name": "vibebug",
+  "version": "0.1.0",
+  "description": "Automatic issue capture for vibe coding failures — without interrupting flow.",
+  "type": "module",
+  "bin": {
+    "vb": "./dist/index.js",
+    "vibebug": "./dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "static/",
+    "drizzle/"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "@inquirer/prompts": "^7.5.0",
+    "better-sqlite3": "^11.9.0",
+    "commander": "^13.1.0",
+    "drizzle-orm": "^0.39.0",
+    "hono": "^4.7.0",
+    "nanoid": "^5.1.0",
+    "open": "^10.1.0",
+    "picocolors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^22.0.0",
+    "drizzle-kit": "^0.30.0",
+    "tsup": "^8.4.0",
+    "vitest": "^3.0.0"
+  },
+  "keywords": ["vibe-coding", "error-tracking", "developer-tools", "cli"],
+  "license": "MIT"
+}
