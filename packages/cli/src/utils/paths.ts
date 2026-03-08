@@ -1,4 +1,4 @@
-import { join } from 'node:path';
+import { join, parse } from 'node:path';
 import { existsSync } from 'node:fs';
 import { VIBEBUG_DIR, DB_FILENAME } from './constants.js';
 
@@ -8,7 +8,7 @@ import { VIBEBUG_DIR, DB_FILENAME } from './constants.js';
  */
 export function findProjectRoot(startDir: string): string | null {
   let dir = startDir;
-  const { root } = require('node:path').parse(dir);
+  const { root } = parse(dir);
 
   while (dir !== root) {
     if (existsSync(join(dir, VIBEBUG_DIR))) {

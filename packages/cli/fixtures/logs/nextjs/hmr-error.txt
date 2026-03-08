@@ -1,0 +1,8 @@
+ ⨯ ./src/components/Chart.tsx
+Module not found: Can't resolve 'recharts'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/Chart.tsx
+./src/app/dashboard/page.tsx

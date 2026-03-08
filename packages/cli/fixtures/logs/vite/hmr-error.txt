@@ -1,0 +1,10 @@
+10:32:15 AM [vite] Internal server error: Failed to parse source for import analysis because the content contains invalid JS syntax. If you are using JSX, make sure to name the file with the .jsx or .tsx extension.
+  Plugin: vite:import-analysis
+  File: /Users/dev/my-app/src/components/NewComponent.js:15:4
+  15 |    return <div className="wrapper">
+     |           ^
+  16 |      <h1>Hello</h1>
+  17 |    </div>
+      at formatError (file:///Users/dev/my-app/node_modules/vite/dist/node/chunks/dep-xyz.js:44191:46)
+      at TransformContext.error (file:///Users/dev/my-app/node_modules/vite/dist/node/chunks/dep-xyz.js:44187:19)
+      at TransformContext.transform (file:///Users/dev/my-app/node_modules/vite/dist/node/chunks/dep-xyz.js:42637:22)

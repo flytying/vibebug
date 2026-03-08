@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VibeBug</title>
+    <script>
+      // Prevent flash of wrong theme
+      if (localStorage.getItem('vb-theme') !== 'light') document.documentElement.classList.add('dark');
+    </script>
   </head>
   <body>
     <div id="root"></div>

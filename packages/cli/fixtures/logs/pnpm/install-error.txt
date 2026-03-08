@@ -1,0 +1,9 @@
+ ERR_PNPM_NO_MATCHING_VERSION  No matching version found for @acme/internal-lib@^3.0.0
+
+This error happened while installing the dependencies of my-app@1.0.0
+
+The latest version of @acme/internal-lib is 2.5.1 which doesn't satisfy ^3.0.0.
+
+If you need the full list of all 8 versions of @acme/internal-lib, try running:
+
+pnpm info @acme/internal-lib versions

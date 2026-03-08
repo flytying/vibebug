@@ -1,0 +1,8 @@
+error TS5023: Unknown compiler option 'moduleResolutions'.
+
+  Did you mean 'moduleResolution'?
+
+error TS6046: Argument for '--module' option must be: 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'es2022', 'esnext', 'node16', 'nodenext', 'preserve'.
+
+
+Found 2 errors.

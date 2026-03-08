@@ -63,6 +63,7 @@ export interface FixAttempt {
   rootCause: string | null;
   prevention: string | null;
   successful: boolean | null;
+  source: 'agent' | 'manual' | 'api';
   createdAt: string;
 }
 
@@ -71,4 +72,5 @@ export interface CaptureInput {
   commandStr: string;
   result: RunResult;
   gitContext: GitContext;
+  skipSignatures?: Set<string>;
 }

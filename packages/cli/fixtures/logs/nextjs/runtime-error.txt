@@ -1,0 +1,7 @@
+ ⨯ Error: NEXT_NOT_FOUND
+    at notFound (/Users/alice/projects/my-app/node_modules/next/dist/client/components/not-found.js:3:11)
+    at UserPage (/Users/alice/projects/my-app/src/app/users/[id]/page.tsx:12:5)
+    at async Promise.all (index 0)
+    at async resolveParams (/Users/alice/projects/my-app/node_modules/next/dist/server/future/route-modules/app-page/module.compiled.js:1:30891)
+  digest: "NEXT_NOT_FOUND"
+ GET /users/999 500 in 42ms

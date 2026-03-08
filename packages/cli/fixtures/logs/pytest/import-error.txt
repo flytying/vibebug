@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.5, pytest-7.4.3, pluggy-1.3.0
+rootdir: /home/dev/my-api
+collected 0 items / 1 error
+
+=============================== ERRORS =======================================
+__________________ ERROR collecting tests/test_utils.py _____________________
+ImportError while importing test module '/home/dev/my-api/tests/test_utils.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback (most recent call last):
+  File "/home/dev/my-api/tests/test_utils.py", line 3, in <module>
+    from app.utils.helpers import format_date
+ModuleNotFoundError: No module named 'app.utils.helpers'
+=========================== short test summary info ============================
+ERROR tests/test_utils.py
+======================== 1 error in 0.12s ====================================

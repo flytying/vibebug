@@ -1,0 +1,18 @@
+vite v5.1.4 building for production...
+transforming (152) src/pages/Dashboard.tsx
+[32m✓[0m 203 modules transformed.
+
+[33m[vite]:[0m [1mRollup failed to resolve import[0m "chart.js/auto" from "[36msrc/components/Chart.tsx[0m".
+[2mThis is most likely unintended because it can break your application at runtime.[0m
+If you do want to externalize this dependency explicitly add it to
+`build.rollupOptions.external`
+
+[31merror during build:[0m
+[31mError:[0m [vite]: Rollup failed to resolve import "chart.js/auto" from "src/components/Chart.tsx".
+    at viteWarn (file:///Users/alice/projects/dashboard/node_modules/vite/dist/node/chunks/dep-jDlpJr2x.js:66754:27)
+    at onRollupWarning (file:///Users/alice/projects/dashboard/node_modules/vite/dist/node/chunks/dep-jDlpJr2x.js:66782:9)
+    at onwarn (file:///Users/alice/projects/dashboard/node_modules/vite/dist/node/chunks/dep-jDlpJr2x.js:66453:13)
+    at file:///Users/alice/projects/dashboard/node_modules/rollup/dist/es/shared/node-entry.js:18443:13
+    at Object.logger [as onLog] (file:///Users/alice/projects/dashboard/node_modules/rollup/dist/es/shared/node-entry.js:19866:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///Users/alice/projects/dashboard/node_modules/rollup/dist/es/shared/node-entry.js:18340:26)
+    at file:///Users/alice/projects/dashboard/node_modules/rollup/dist/es/shared/node-entry.js:18298:26

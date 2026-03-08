@@ -4,3 +4,22 @@ dist/
 .turbo/
 *.tsbuildinfo
 .DS_Store
+
+# Claude Code local settings (contains machine-specific paths)
+.claude/settings.local.json
+.claude/plans/
+.claude/worktrees/
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Demo recordings (large binaries — keep in releases, not git)
+packages/cli/demo.gif
+packages/cli/demo.mp4
+
+# Editor
+.vscode/
+.idea/

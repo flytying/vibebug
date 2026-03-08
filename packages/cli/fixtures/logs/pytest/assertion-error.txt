@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.5, pytest-7.4.3, pluggy-1.3.0
+rootdir: /home/dev/my-api
+
+tests/test_math.py::test_addition FAILED
+
+=================================== FAILURES ===================================
+________________ test_addition ________________
+
+    def test_addition():
+>       assert add(2, 3) == 6
+E       AssertionError: assert 5 == 6
+E        +  where 5 = add(2, 3)
+
+tests/test_math.py:10: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_math.py::test_addition - AssertionError: assert 5 == 6
+========================= 1 failed in 0.05s ===================================

@@ -1,0 +1,14 @@
+ ERR_PNPM_PEER_DEP_ISSUES  Unmet peer dependencies
+
+packages/dashboard
+├── ✕ unmet peer react@"^17.0.0" from react-beautiful-dnd@13.1.1
+│   └── react@18.2.0 is installed
+└── ✕ unmet peer react-dom@"^17.0.0" from react-beautiful-dnd@13.1.1
+    └── react-dom@18.2.0 is installed
+
+Peer dependencies that should be installed:
+  react@"^17.0.0"
+  react-dom@"^17.0.0"
+
+hint: If you want peer dependencies to be automatically installed, add "auto-install-peers=true" to an .npmrc file at the root of your project.
+hint: If you don't want pnpm to fail on peer dependency issues, add "strict-peer-dependencies=false" to an .npmrc file at the root of your project.

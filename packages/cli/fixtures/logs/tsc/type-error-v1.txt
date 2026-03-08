@@ -1,0 +1,18 @@
+src/components/UserProfile.tsx:42:5 - error TS2322: Type 'string' is not assignable to type 'number'.
+
+42     age: user.age,
+       ~~~
+
+  src/types/user.ts:8:3
+    8   age: number;
+        ~~~
+    The expected type comes from property 'age' which is declared here on type 'UserData'
+
+src/components/UserProfile.tsx:55:12 - error TS2345: Argument of type '{ name: string; }' is not assignable to parameter of type 'UserData'.
+  Property 'age' is missing in type '{ name: string; }' but required in type 'UserData'.
+
+55     updateUser({ name: user.name });
+              ~~~~~~~~~~~~~~~~~~~~~~
+
+
+Found 2 errors in the same file.

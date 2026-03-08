@@ -1,0 +1,11 @@
+
+Oops! Something went wrong! :(
+
+ESLint: 8.56.0
+
+ESLint couldn't find the config "next/core-web-vitals" to extend from.
+Please check that the name of the config is correct.
+
+The config "next/core-web-vitals" was referenced from the config file in "/Users/dev/my-app/.eslintrc.json".
+
+If you still have problems, please stop by https://eslint.org/chat/help to chat with the team.

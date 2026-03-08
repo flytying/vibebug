@@ -1,0 +1,32 @@
+ FAIL  src/components/__tests__/Header.test.tsx
+  ● Header › renders correctly
+
+    expect(received).toMatchSnapshot()
+
+    Snapshot name: `Header renders correctly 1`
+
+    - Snapshot  - 1
+    + Received  + 1
+
+      <header
+    -   className="header header--default"
+    +   className="header header--compact"
+      >
+        <nav>
+
+      8 |   it('renders correctly', () => {
+      9 |     const { container } = render(<Header />);
+    > 10 |     expect(container).toMatchSnapshot();
+         |                       ^
+      11 |   });
+      12 | });
+
+      at Object.<anonymous> (src/components/__tests__/Header.test.tsx:10:23)
+
+ › 1 snapshot failed.
+Snapshot Summary
+ › 1 snapshot failed from 1 test suite. Inspect your code changes or run `npm test -- -u` to update them.
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Time:        1.503 s

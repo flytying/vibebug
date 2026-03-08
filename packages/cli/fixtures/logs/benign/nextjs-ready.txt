@@ -1,0 +1,11 @@
+  ▲ Next.js 14.1.0
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Ready in 1.2s
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 892ms (1284 modules)
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 234ms (89 modules)
+GET /dashboard 200 in 1234ms
+GET /api/health 200 in 45ms

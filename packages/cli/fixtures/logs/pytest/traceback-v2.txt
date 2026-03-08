@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.1, pytest-8.0.0, pluggy-1.4.0
+rootdir: /Users/bob/work/my-api
+collected 45 items
+
+tests/test_auth.py::test_login_success PASSED
+tests/test_auth.py::test_login_invalid_password FAILED
+
+=================================== FAILURES ===================================
+________________ test_login_invalid_password ________________
+
+    def test_login_invalid_password():
+        client = TestClient(app)
+>       response = client.post("/auth/login", json={"email": "test@test.com", "password": "wrong"})
+
+tests/test_auth.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def post(self, url, **kwargs):
+>       return self.request("POST", url, **kwargs)
+
+/Users/bob/.local/lib/python3.12/site-packages/httpx/_client.py:1842: in post
+>       raise ConnectionRefusedError("Connection refused")
+E       ConnectionRefusedError: Connection refused
+
+=========================== short test summary info ============================
+FAILED tests/test_auth.py::test_login_invalid_password - ConnectionRefusedError: Connection refused
+========================= 1 failed, 1 passed in 3.01s =========================

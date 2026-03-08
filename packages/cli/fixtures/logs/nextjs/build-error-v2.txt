@@ -1,0 +1,14 @@
+Failed to compile.
+
+./src/app/dashboard/page.tsx:18:10
+Type error: Property 'userId' does not exist on type 'Session'.
+
+  16 |   const session = await getServerSession(authOptions);
+  17 |   if (session) {
+> 18 |     const id = session.userId;
+     |                        ^
+  19 |     const data = await fetchUserData(id);
+  20 |     return <Dashboard data={data} />;
+  21 |   }
+
+Next.js (14.2.3) on Node.js v22.2.0 (arm64)

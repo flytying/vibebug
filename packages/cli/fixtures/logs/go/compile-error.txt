@@ -1,0 +1,3 @@
+# myapp/handlers
+./handlers/user.go:23:15: cannot use resp (variable of type *http.Response) as type string in argument to fmt.Println
+./handlers/user.go:31:2: missing return at end of function

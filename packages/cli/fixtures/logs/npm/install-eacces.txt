@@ -1,0 +1,12 @@
+npm ERR! code EACCES
+npm ERR! syscall mkdir
+npm ERR! path /usr/local/lib/node_modules/some-package
+npm ERR! errno -13
+npm ERR!
+npm ERR! Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/some-package'
+npm ERR!  [Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/some-package'] {
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'mkdir',
+npm ERR!   path: '/usr/local/lib/node_modules/some-package'
+npm ERR! }

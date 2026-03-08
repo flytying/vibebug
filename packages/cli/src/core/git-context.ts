@@ -3,9 +3,10 @@ import type { GitContext } from '../types/index.js';
 
 export function getGitContext(cwd: string): GitContext {
   try {
-    const branch = execSync('git rev-parse --abbrev-ref HEAD', { cwd, encoding: 'utf-8' }).trim();
-    const commit = execSync('git rev-parse --short HEAD', { cwd, encoding: 'utf-8' }).trim();
-    const statusOutput = execSync('git status --porcelain', { cwd, encoding: 'utf-8' }).trim();
+    const opts = { cwd, encoding: 'utf-8' as const, stdio: ['pipe', 'pipe', 'pipe'] as const };
+    const branch = execSync('git rev-parse --abbrev-ref HEAD', opts).trim();
+    const commit = execSync('git rev-parse --short HEAD', opts).trim();
+    const statusOutput = execSync('git status --porcelain', opts).trim();
     const dirty = statusOutput.length > 0;
 
     return { branch, commit, dirty };

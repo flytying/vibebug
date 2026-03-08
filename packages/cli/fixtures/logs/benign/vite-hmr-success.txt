@@ -1,0 +1,10 @@
+  VITE v5.1.4  ready in 342 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+12:34:56 PM [vite] hmr update /src/App.tsx
+12:34:57 PM [vite] hmr update /src/components/Header.tsx
+12:35:10 PM [vite] hot updated: /src/pages/Dashboard.tsx
+12:35:12 PM [vite] page reload src/main.tsx
