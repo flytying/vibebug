@@ -1,12 +1,12 @@
 # VibeBug
 
-**The bug tracker for vibe coding.**
+**Automatic failure tracking for vibe coding.**
 
-Capture vibe coding failures automatically — without interrupting flow.
+Track build, test, and runtime failures from your terminal — automatically.
 
 See what keeps breaking. Stop repeating the same fixes.
 
-VibeBug is a local-first CLI and dashboard for builders coding fast with AI and losing track of build, test, and runtime failures. Prefix your usual commands with `vb`, and VibeBug captures failures automatically, groups recurring breakage, tracks regressions, and turns noisy terminal chaos into useful summaries.
+VibeBug is a local-first CLI tool that captures command-line failures automatically — build errors, test failures, type errors, runtime crashes. It groups recurring breakage, tracks regressions, estimates AI cost, and serves a local dashboard. Prefix your usual commands with `vb`, and VibeBug does the rest.
 
 ![VibeBug dashboard overview](./docs/assets/vibebug-dashboard-overview.png)
 
@@ -179,6 +179,30 @@ vb summary
 
 ---
 
+## Using with AI agents
+
+If you use Cursor, Claude Code, Cline, or similar AI coding tools, tell your agent to prefix terminal commands with `vb`. This is a one-time setup — the agent will use it from then on.
+
+**Claude Code** — add to your project's `CLAUDE.md`:
+
+```
+When running build, test, or compile commands, prefix them with `vb` for failure tracking (e.g., `vb npm run build`, `vb pytest`, `vb npx tsc`).
+After fixing a failure, run: vb fix --last --summary "<what you changed>" --json
+```
+
+**Cursor** — add to `.cursor/rules`:
+
+```
+Prefix build/test/compile commands with `vb` for failure tracking.
+After fixing a failure, run: vb fix --last --summary "<what you changed>" --json
+```
+
+**Other agents** — add similar instructions to your agent's system prompt or project rules.
+
+VibeBug's `vb fix` command is designed for agents — it accepts `--summary`, `--root-cause`, and `--prevention` flags with `--json` output so agents can record what they fixed without interactive prompts.
+
+---
+
 ## Example summary
 
 ```
@@ -271,7 +295,7 @@ No. VibeBug is for local failure tracking and debugging visibility. It helps you
 
 **Is VibeBug a bug tracker?**
 
-Yes — but it is a different kind. Traditional bug trackers are built for teams, manual reporting, and project management. VibeBug is built for solo builders who want automatic failure capture, recurring breakage visibility, and lightweight tracking without leaving the terminal.
+Not in the traditional sense. VibeBug doesn't do manual filing, assignment, or project management. It automatically captures command-line failures — build errors, test failures, type errors, runtime crashes — groups recurring ones, and tracks regressions. Think of it as a failure memory for your terminal.
 
 **How does AI cost estimation work?**
 
