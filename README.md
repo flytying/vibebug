@@ -277,9 +277,9 @@ Yes — but it is a different kind. Traditional bug trackers are built for teams
 
 ## Status
 
-VibeBug is early and actively evolving.
+VibeBug is in active development and focused on local-first failure tracking for AI-heavy coding workflows.
 
-The current focus is making failure capture habit-forming for solo builders and AI-heavy coding workflows: low friction, useful summaries, and better visibility into recurring breakage.
+Current focus: low-friction capture, recurring failure visibility, regressions, and share-safe summaries.
 
 ---
 
