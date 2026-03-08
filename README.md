@@ -245,27 +245,33 @@ VibeBug today is **not**:
 
 ## FAQ
 
-**Is VibeBug a bug tracker?**
+**Does VibeBug slow down my commands?**
 
-Sort of — but for AI coding workflows.
-
-Traditional bug trackers are built around manual reporting and team processes. VibeBug is built around automatically capturing failures from your local development flow and helping you see recurring friction quickly.
+No. VibeBug runs your command exactly as you would, then captures the output if it fails. There is no meaningful overhead.
 
 **Does VibeBug send my logs to the cloud?**
 
 No. VibeBug is local-first. Your data stays in your project unless you choose to export or share it.
 
+**Is it safe to share summaries?**
+
+VibeBug is designed to make summaries share-safe by default, but you should still review outputs before posting publicly.
+
 **Does it work only with AI tools?**
 
-No. VibeBug works with any command that can fail — `npm run build`, `pytest`, `cargo build`, etc. But it's especially useful when coding with AI because failures tend to be more repetitive, noisier, and harder to keep track of.
+No. VibeBug works with any command that can fail. But it is especially useful when coding with AI, because failures tend to be more repetitive and harder to keep track of.
+
+**What kinds of failures does VibeBug track?**
+
+Build errors, test failures, type errors, runtime crashes — anything that produces a non-zero exit code. VibeBug captures the output, groups recurring failures, and tracks regressions automatically.
 
 **Does it replace GitHub Issues, Linear, or Jira?**
 
 No. VibeBug is for local failure tracking and debugging visibility. It helps you understand recurring breakage during development. It is not a replacement for full team planning or project management tools.
 
-**Is it safe to share summaries?**
+**Is VibeBug a bug tracker?**
 
-VibeBug is designed to make summaries share-safe by default, but you should still review outputs before posting publicly.
+Yes — but it is a different kind. Traditional bug trackers are built for teams, manual reporting, and project management. VibeBug is built for solo builders who want automatic failure capture, recurring breakage visibility, and lightweight tracking without leaving the terminal.
 
 ---
 
