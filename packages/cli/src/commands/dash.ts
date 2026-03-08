@@ -14,6 +14,7 @@ export async function dashCommand(options: { port?: string; open?: boolean }): P
   const server = serve({
     fetch: app.fetch,
     port,
+    hostname: '127.0.0.1',
   }, (info) => {
     const url = `http://localhost:${info.port}`;
     console.log(pc.green(`VibeBug dashboard running at ${pc.bold(url)}`));

@@ -16,6 +16,9 @@ dist/
 *.pem
 *.key
 
+# Security audit (internal only)
+SECURITY-AUDIT.md
+
 # Demo recordings (large binaries — keep in releases, not git)
 packages/cli/demo.gif
 packages/cli/demo.mp4

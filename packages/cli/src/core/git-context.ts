@@ -15,7 +15,12 @@ export function getGitContext(cwd: string): GitContext {
   }
 }
 
+const GIT_REF_PATTERN = /^[a-f0-9]{4,40}$/i;
+
 export function getGitDiff(cwd: string, fromCommit: string, toCommit: string, maxSize: number): string | null {
+  if (!GIT_REF_PATTERN.test(fromCommit) || !GIT_REF_PATTERN.test(toCommit)) {
+    return null;
+  }
   try {
     const diff = execSync(`git diff ${fromCommit}..${toCommit}`, {
       cwd,

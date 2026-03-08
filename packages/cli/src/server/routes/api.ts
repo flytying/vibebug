@@ -4,6 +4,10 @@ import { nanoid } from 'nanoid';
 import { getDatabase } from '../../db/connection.js';
 import { projects, issues, occurrences, fixAttempts, runLog } from '../../db/schema.js';
 
+const VALID_STATUSES = ['open', 'resolved', 'ignored'] as const;
+const VALID_SEVERITIES = ['low', 'medium', 'high', 'critical'] as const;
+const MAX_TEXT_LENGTH = 10_000;
+
 export function createApiRoutes(projectRoot: string) {
   const api = new Hono();
   const db = getDatabase(projectRoot);
@@ -190,9 +194,22 @@ export function createApiRoutes(projectRoot: string) {
   // Update issue status
   api.patch('/issues/:id', async (c) => {
     const issueId = c.req.param('id');
-    const body = await c.req.json<{ status?: string; severity?: string }>();
-    const now = new Date().toISOString();
 
+    let body: { status?: string; severity?: string };
+    try {
+      body = await c.req.json();
+    } catch {
+      return c.json({ error: 'Invalid JSON' }, 400);
+    }
+
+    if (body.status && !(VALID_STATUSES as readonly string[]).includes(body.status)) {
+      return c.json({ error: `Invalid status. Must be one of: ${VALID_STATUSES.join(', ')}` }, 400);
+    }
+    if (body.severity && !(VALID_SEVERITIES as readonly string[]).includes(body.severity)) {
+      return c.json({ error: `Invalid severity. Must be one of: ${VALID_SEVERITIES.join(', ')}` }, 400);
+    }
+
+    const now = new Date().toISOString();
     const updateFields: Record<string, unknown> = { updatedAt: now };
     if (body.status) {
       updateFields.status = body.status;
@@ -215,12 +232,31 @@ export function createApiRoutes(projectRoot: string) {
       .get();
     if (!issue) return c.json({ error: 'Issue not found' }, 404);
 
-    const body = await c.req.json<{
+    let body: {
       summary?: string;
       rootCause?: string;
       prevention?: string;
       source?: 'agent' | 'manual' | 'api';
-    }>();
+    };
+    try {
+      body = await c.req.json();
+    } catch {
+      return c.json({ error: 'Invalid JSON' }, 400);
+    }
+
+    const VALID_SOURCES = ['agent', 'manual', 'api'] as const;
+    if (body.source && !(VALID_SOURCES as readonly string[]).includes(body.source)) {
+      return c.json({ error: `Invalid source. Must be one of: ${VALID_SOURCES.join(', ')}` }, 400);
+    }
+    if (body.summary && body.summary.length > MAX_TEXT_LENGTH) {
+      return c.json({ error: `summary exceeds max length of ${MAX_TEXT_LENGTH}` }, 400);
+    }
+    if (body.rootCause && body.rootCause.length > MAX_TEXT_LENGTH) {
+      return c.json({ error: `rootCause exceeds max length of ${MAX_TEXT_LENGTH}` }, 400);
+    }
+    if (body.prevention && body.prevention.length > MAX_TEXT_LENGTH) {
+      return c.json({ error: `prevention exceeds max length of ${MAX_TEXT_LENGTH}` }, 400);
+    }
 
     const now = new Date().toISOString();
     const fixId = nanoid();
