@@ -83,6 +83,12 @@ packages/dashboard/src/
 - `nanoid` for all primary keys
 - ISO 8601 strings for all timestamps (not Unix)
 
+## Deployment
+
+- **Landing site (`site/`):** Hosted on Cloudflare Pages. Every push to `main` auto-deploys the `site/` directory to **vibebug.dev**. No build step — static files only.
+- **Custom domain:** `vibebug.dev` DNS is managed in Cloudflare (A records → Cloudflare Pages).
+- **CLI + Dashboard:** Not deployed — the CLI is distributed via npm, and the dashboard is bundled into `packages/cli/static/` at build time.
+
 ## Coding Standards
 
 Follow the Pragmatic AI Coding Standards defined in `pragmatic-programming-skills.md` when coding.
