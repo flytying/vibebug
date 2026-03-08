@@ -273,6 +273,10 @@ No. VibeBug is for local failure tracking and debugging visibility. It helps you
 
 Yes — but it is a different kind. Traditional bug trackers are built for teams, manual reporting, and project management. VibeBug is built for solo builders who want automatic failure capture, recurring breakage visibility, and lightweight tracking without leaving the terminal.
 
+**How does AI cost estimation work?**
+
+Every time VibeBug captures a failure, it estimates how many tokens the error log would consume and calculates an approximate cost based on current model pricing (Claude Sonnet by default). It’s a rough estimate for visibility — not a billing tool — designed to help you spot which recurring failures are eating the most AI debugging effort.
+
 ---
 
 ## Status
