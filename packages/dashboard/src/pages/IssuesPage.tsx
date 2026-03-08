@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router';
-import { SlidersHorizontal, X } from 'lucide-react';
+import { SlidersHorizontal, X, ArrowUpDown, ArrowDown } from 'lucide-react';
 import { api } from '../api/client';
 import { useApi } from '../hooks/useApi';
 import { Card } from '@/components/ui/card';
@@ -196,10 +196,10 @@ export function IssuesPage() {
                 <TableHead className="w-20">Type</TableHead>
                 <TableHead className="w-20">Severity</TableHead>
                 <TableHead className="w-24">Status</TableHead>
-                <TableHead className="w-16 text-right">Seen</TableHead>
-                <TableHead className="w-20 text-right">Cost</TableHead>
+                <SortableHead value="occurrences" current={sort} onSort={setSort} className="w-16 text-right">Seen</SortableHead>
+                <SortableHead value="cost" current={sort} onSort={setSort} className="w-20 text-right">Cost</SortableHead>
                 <TableHead className="w-28 text-right">Appeared</TableHead>
-                <TableHead className="w-28 text-right">Last seen</TableHead>
+                <SortableHead value="lastSeenAt" current={sort} onSort={setSort} className="w-28 text-right">Last seen</SortableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -249,6 +249,33 @@ export function IssuesPage() {
         </div>
       )}
     </div>
+  );
+}
+
+function SortableHead({
+  value,
+  current,
+  onSort,
+  className,
+  children,
+}: {
+  value: string;
+  current: string;
+  onSort: (v: string) => void;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const active = current === value;
+  return (
+    <TableHead className={className}>
+      <button
+        onClick={() => onSort(value)}
+        className={`inline-flex items-center gap-1 transition-colors ${active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+      >
+        {children}
+        {active ? <ArrowDown className="h-3 w-3" /> : <ArrowUpDown className="h-3 w-3 opacity-40" />}
+      </button>
+    </TableHead>
   );
 }
 
