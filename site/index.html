@@ -141,6 +141,22 @@
           "@type": "Answer",
           "text": "Yes. Summaries and exports are designed to be share-safe, with sanitization for sensitive details."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What kinds of failures does VibeBug track?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Build errors, test failures, type errors, runtime crashes — anything that produces a non-zero exit code. VibeBug captures the output, groups recurring failures, and tracks regressions automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does AI cost estimation work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every time VibeBug captures a failure, it estimates how many tokens the error log would consume and calculates an approximate cost based on current model pricing (Claude Sonnet by default). It's a rough estimate for visibility — not a billing tool — designed to help you spot which recurring failures are eating the most AI debugging effort."
+        }
       }
     ]
   }
@@ -821,6 +837,28 @@
           </button>
           <div class="faq-content">
             <p class="pb-6 text-slate-500 leading-relaxed">Yes. Summaries and exports are designed to be share-safe, with sanitization for sensitive details.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div>
+          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
+            <span class="text-base sm:text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">What kinds of failures does VibeBug track?</span>
+            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </button>
+          <div class="faq-content">
+            <p class="pb-6 text-slate-500 leading-relaxed">Build errors, test failures, type errors, runtime crashes &mdash; anything that produces a non-zero exit code. VibeBug captures the output, groups recurring failures, and tracks regressions automatically.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div>
+          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
+            <span class="text-base sm:text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">How does AI cost estimation work?</span>
+            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </button>
+          <div class="faq-content">
+            <p class="pb-6 text-slate-500 leading-relaxed">Every time VibeBug captures a failure, it estimates how many tokens the error log would consume and calculates an approximate cost based on current model pricing (Claude Sonnet by default). It's a rough estimate for visibility &mdash; not a billing tool &mdash; designed to help you spot which recurring failures are eating the most AI debugging effort.</p>
           </div>
         </div>
       </div>
