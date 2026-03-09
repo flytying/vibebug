@@ -12,6 +12,23 @@ VibeBug is a local-first CLI tool that captures command-line failures automatica
 
 ---
 
+## Why it exists
+
+AI-assisted coding speeds up output, but it also creates a lot of repeated breakage.
+
+Build failures, test failures, type errors, and runtime errors pile up quickly. They flash by in terminal history, fixes get repeated, and it becomes hard to learn from what already happened.
+
+VibeBug exists to make those failures visible and useful.
+
+Instead of losing the trail, you get a local history of:
+
+- what fails most often
+- what came back after being fixed
+- which commands create the most friction
+- where debugging effort and AI cost are going
+
+---
+
 ## What it does
 
 VibeBug helps you answer one question:
@@ -66,23 +83,6 @@ Best fit right now:
 - indie hackers shipping quickly with Cursor, Claude Code, Cline, or similar tools
 - open-source tool builders and tinkerers
 - anyone who wants lightweight failure tracking without setting up cloud infrastructure
-
----
-
-## Why it exists
-
-AI-assisted coding speeds up output, but it also creates a lot of repeated breakage.
-
-Build failures, test failures, type errors, and runtime errors pile up quickly. They flash by in terminal history, fixes get repeated, and it becomes hard to learn from what already happened.
-
-VibeBug exists to make those failures visible and useful.
-
-Instead of losing the trail, you get a local history of:
-
-- what fails most often
-- what came back after being fixed
-- which commands create the most friction
-- where debugging effort and AI cost are going
 
 ---
 
