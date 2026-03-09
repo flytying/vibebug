@@ -179,17 +179,9 @@ vb summary
 
 **7) Add VibeBug to your AI agent (optional but recommended)**
 
-If you use Claude Code, Cursor, or Cline, add the rules below so your agent uses `vb` automatically. See [Using with AI agents](#using-with-ai-agents) for copy-pasteable templates.
-
----
-
-## Using with AI agents
-
 If you use Claude Code, Cursor, Cline, or similar AI coding tools, add VibeBug rules to your project so the agent uses `vb` automatically. This is a one-time setup per project.
 
-### Claude Code
-
-Add to your project's `CLAUDE.md`:
+**Claude Code** — add to your project's `CLAUDE.md`:
 
 ```markdown
 ## VibeBug — Failure Tracking
@@ -204,9 +196,7 @@ This project uses VibeBug for automatic failure tracking.
 - Do not repeat fixes that have already been tried — check the failure history first
 ```
 
-### Cursor
-
-Add to `.cursor/rules` in your project root:
+**Cursor** — add to `.cursor/rules` in your project root:
 
 ```
 ## VibeBug — Failure Tracking
@@ -221,9 +211,7 @@ This project uses VibeBug for automatic failure tracking.
 - Do not repeat fixes that have already been tried — check the failure history first
 ```
 
-### Cline
-
-Add to your project's `.clinerules` file:
+**Cline** — add to your project's `.clinerules` file:
 
 ```
 ## VibeBug — Failure Tracking
@@ -238,9 +226,7 @@ This project uses VibeBug for automatic failure tracking.
 - Do not repeat fixes that have already been tried — check the failure history first
 ```
 
-### Other agents
-
-Add the same instructions to your agent's system prompt or project rules file. The key rules are: prefix commands with `vb`, and record fixes with `vb fix --last --summary "..." --json`.
+**Other agents** — add the same instructions to your agent's system prompt or project rules file. The key rules are: prefix commands with `vb`, and record fixes with `vb fix --last --summary "..." --json`.
 
 VibeBug's `vb fix` command is designed for non-interactive agent use — it accepts `--summary`, `--root-cause`, and `--prevention` flags with `--json` output so agents can record what they fixed without prompts.
 
