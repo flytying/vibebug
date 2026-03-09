@@ -330,49 +330,69 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-16 fade-in">
         <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">How it works</span>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
-          Simple in practice. Useful over time.
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-5">
+          Simple in practice.<br>
+          <span class="text-brand-600">Useful over time.</span>
         </h2>
+        <p class="text-lg text-slate-500 max-w-xl mx-auto">No config files. No accounts. No cloud. Just prefix your commands.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
         <!-- Step 1 -->
         <div class="fade-in">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">1</span>
-            <div class="hidden lg:block flex-1 h-px bg-slate-200/80"></div>
+          <span class="inline-flex items-center justify-center w-11 h-11 bg-brand-500 text-white rounded-full font-bold text-sm mb-5">1</span>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Prefix with <code class="text-brand-600 bg-brand-50 px-1.5 py-0.5 rounded text-lg">vb</code></h3>
+          <p class="text-slate-500 leading-relaxed mb-5">Run your usual build, test, or dev commands through VibeBug. If they fail, VibeBug captures it automatically.</p>
+          <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm terminal-glow">
+            <div class="flex items-center gap-1.5 mb-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+            </div>
+            <div class="space-y-1 text-slate-300">
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> npm run build</p>
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> pytest</p>
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> cargo test</p>
+            </div>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Prefix any command with <code class="text-brand-600 bg-brand-50 px-1.5 py-0.5 rounded text-base">vb</code></h3>
-          <p class="text-sm text-slate-500 leading-relaxed">Run your usual build, test, or dev commands through VibeBug.</p>
         </div>
 
         <!-- Step 2 -->
         <div class="fade-in">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">2</span>
-            <div class="hidden lg:block flex-1 h-px bg-slate-200/80"></div>
+          <span class="inline-flex items-center justify-center w-11 h-11 bg-brand-500 text-white rounded-full font-bold text-sm mb-5">2</span>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Failures Are Captured</h3>
+          <p class="text-slate-500 leading-relaxed mb-5">VibeBug detects failed commands and watches terminal output for runtime errors. Recurring issues are grouped together.</p>
+          <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm terminal-glow">
+            <div class="flex items-center gap-1.5 mb-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+            </div>
+            <div class="space-y-1 text-slate-300">
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> npm run build</p>
+              <p class="text-red-400">ERR! Cannot find module</p>
+              <p class="text-green-400">&nbsp;✓ Failure captured</p>
+              <p class="text-brand-400">&nbsp;↻ Recurring issue grouped</p>
+            </div>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Failures are captured automatically</h3>
-          <p class="text-sm text-slate-500 leading-relaxed">VibeBug detects failed commands and watches terminal output for runtime errors, including cases where a process keeps running.</p>
         </div>
 
         <!-- Step 3 -->
         <div class="fade-in">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">3</span>
-            <div class="hidden lg:block flex-1 h-px bg-slate-200/80"></div>
+          <span class="inline-flex items-center justify-center w-11 h-11 bg-brand-500 text-white rounded-full font-bold text-sm mb-5">3</span>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">See What Breaks</h3>
+          <p class="text-slate-500 leading-relaxed mb-5">Open the local dashboard to see recurring failures, regressions, failing commands, and estimated AI debugging cost.</p>
+          <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm terminal-glow">
+            <div class="flex items-center gap-1.5 mb-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+            </div>
+            <div class="space-y-1 text-slate-300">
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> dash</p>
+              <p class="text-brand-400">&nbsp;► Dashboard at localhost:7600</p>
+            </div>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Recurring issues are grouped together</h3>
-          <p class="text-sm text-slate-500 leading-relaxed">Instead of cluttering your history with duplicates, VibeBug recognizes when the same failure keeps coming back.</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="fade-in">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">4</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">You get a usable failure history</h3>
-          <p class="text-sm text-slate-500 leading-relaxed">Review captures in the terminal or open the local dashboard to see recurring bugs, regressions, failing commands, and estimated AI debugging cost.</p>
         </div>
       </div>
     </div>
