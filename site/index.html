@@ -234,23 +234,58 @@
 
   <!-- ============ SECTION 3: PROBLEM ============ -->
   <section class="py-20 md:py-28 bg-brand-50/40">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center fade-in">
-      <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Why it exists</span>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-8">
-        Vibe coding moves fast.<br>
-        <span class="text-brand-600">Terminal failures disappear faster.</span>
-      </h2>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 fade-in">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: Content -->
+        <div>
+          <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Why it exists</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-8">
+            Vibe coding moves fast.<br>
+            <span class="text-brand-600">Terminal failures disappear faster.</span>
+          </h2>
 
-      <div class="text-left sm:text-center space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
-        <p>When you code with AI, failures pile up quickly.</p>
-        <p>A build breaks. A test fails. A dev server throws an error. You fix one thing, move on, and two hours later the same issue is back &mdash; but now it feels new again.</p>
-        <p>Most of the problem is not just the failure itself. It's the lack of memory around it.</p>
-        <p>You lose the error in terminal scrollback. You forget what already happened. You repeat the same debugging loop. And if you are using AI to help fix things, the cost keeps stacking quietly in the background.</p>
+          <div class="space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p>When you code with AI, failures pile up quickly.</p>
+            <p>A build breaks. A test fails. A dev server throws an error. You fix one thing, move on, and two hours later the same issue is back &mdash; but now it feels new again.</p>
+            <p>Most of the problem is not just the failure itself. It's the lack of memory around it.</p>
+            <p>You lose the error in terminal scrollback. You forget what already happened. You repeat the same debugging loop. And if you are using AI to help fix things, the cost keeps stacking quietly in the background.</p>
+          </div>
+
+          <p class="mt-8 text-lg sm:text-xl font-semibold text-slate-900">
+            VibeBug gives your terminal a memory.
+          </p>
+        </div>
+
+        <!-- Right: Terminal mock -->
+        <div class="bg-slate-900 rounded-2xl terminal-glow p-6 font-mono text-sm sm:text-base float-anim">
+          <div class="flex items-center gap-2 mb-5">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <span class="ml-2 text-xs text-slate-500">terminal</span>
+          </div>
+          <div class="space-y-4 text-slate-300">
+            <div>
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">npm run build</span></p>
+              <p class="text-red-400 mt-1">Error: Cannot find module './components/Auth'</p>
+              <p class="text-slate-500 text-xs mt-1">→ scrolled past, forgotten</p>
+            </div>
+            <div class="border-t border-slate-700/50 pt-4">
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">npm run build</span></p>
+              <p class="text-red-400 mt-1">Error: Cannot find module './components/Auth'</p>
+              <p class="text-slate-500 text-xs mt-1">→ same error, 2 hours later</p>
+            </div>
+            <div class="border-t border-slate-700/50 pt-4">
+              <p><span class="text-slate-500">$</span> <span class="text-brand-400">pytest</span></p>
+              <p class="text-red-400 mt-1">FAILED tests/test_api.py::test_auth - fixture error</p>
+              <p class="text-slate-500 text-xs mt-1">→ broke again after "fix"</p>
+            </div>
+            <div class="border-t border-slate-700/50 pt-4 opacity-50">
+              <p class="text-slate-500 text-xs italic">no history · no grouping · no memory</p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <p class="mt-10 text-lg sm:text-xl font-semibold text-slate-900">
-        VibeBug gives your terminal a memory.
-      </p>
     </div>
   </section>
 
