@@ -534,10 +534,12 @@
           </div>
           <p class="text-sm text-slate-500 mb-4">Add to your project&rsquo;s <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">CLAUDE.md</code>:</p>
           <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-300 leading-relaxed">
-            <span class="text-slate-500"># In CLAUDE.md</span><br>
-            Prefix build/test/compile<br>commands with <span class="text-brand-400">`vb`</span><br>
-            <span class="text-slate-500 mt-1 block">After fixing, run:</span>
-            <span class="text-brand-400">vb fix --last --summary</span><br><span class="text-brand-400">"&lt;what you changed&gt;" --json</span>
+            <span class="text-slate-500">## VibeBug &mdash; Failure Tracking</span><br>
+            <span class="text-slate-400 text-[11px] block mt-1">Prefix build/test/typecheck/lint<br>commands with <span class="text-brand-400">`vb`</span></span>
+            <span class="text-slate-500 mt-2 block">After fixing:</span>
+            <span class="text-brand-400">vb fix --last --summary "..."</span><br><span class="text-brand-400">--root-cause "..." --json</span>
+            <span class="text-slate-500 mt-2 block">Before starting work:</span>
+            <span class="text-brand-400">vb list</span>
           </div>
         </div>
         <!-- Cursor -->
@@ -550,31 +552,35 @@
           </div>
           <p class="text-sm text-slate-500 mb-4">Add to <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">.cursor/rules</code>:</p>
           <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-300 leading-relaxed">
-            <span class="text-slate-500"># In .cursor/rules</span><br>
-            Prefix build/test/compile<br>commands with <span class="text-brand-400">`vb`</span><br>
-            <span class="text-slate-500 mt-1 block">After fixing, run:</span>
-            <span class="text-brand-400">vb fix --last --summary</span><br><span class="text-brand-400">"&lt;what you changed&gt;" --json</span>
+            <span class="text-slate-500">## VibeBug &mdash; Failure Tracking</span><br>
+            <span class="text-slate-400 text-[11px] block mt-1">Prefix build/test/typecheck/lint<br>commands with <span class="text-brand-400">`vb`</span></span>
+            <span class="text-slate-500 mt-2 block">After fixing:</span>
+            <span class="text-brand-400">vb fix --last --summary "..."</span><br><span class="text-brand-400">--root-cause "..." --json</span>
+            <span class="text-slate-500 mt-2 block">Before starting work:</span>
+            <span class="text-brand-400">vb list</span>
           </div>
         </div>
-        <!-- Other agents -->
+        <!-- Cline -->
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 card-hover fade-in">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center">
-              <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-slate-900">Other Agents</h3>
+            <h3 class="text-lg font-bold text-slate-900">Cline</h3>
           </div>
-          <p class="text-sm text-slate-500 mb-4">Add to your agent&rsquo;s system prompt or project rules:</p>
+          <p class="text-sm text-slate-500 mb-4">Add to <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">.clinerules</code>:</p>
           <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-300 leading-relaxed">
-            <span class="text-slate-500"># In system prompt</span><br>
-            Prefix build/test/compile<br>commands with <span class="text-brand-400">`vb`</span><br>
-            <span class="text-slate-500 mt-1 block">After fixing, run:</span>
-            <span class="text-brand-400">vb fix --last --summary</span><br><span class="text-brand-400">"&lt;what you changed&gt;" --json</span>
+            <span class="text-slate-500">## VibeBug &mdash; Failure Tracking</span><br>
+            <span class="text-slate-400 text-[11px] block mt-1">Prefix build/test/typecheck/lint<br>commands with <span class="text-brand-400">`vb`</span></span>
+            <span class="text-slate-500 mt-2 block">After fixing:</span>
+            <span class="text-brand-400">vb fix --last --summary "..."</span><br><span class="text-brand-400">--root-cause "..." --json</span>
+            <span class="text-slate-500 mt-2 block">Before starting work:</span>
+            <span class="text-brand-400">vb list</span>
           </div>
         </div>
       </div>
       <p class="text-center text-sm text-slate-500 mt-8">
-        VibeBug&rsquo;s <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">vb fix</code> command accepts <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--summary</code>, <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--root-cause</code>, and <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--prevention</code> flags with <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--json</code> output &mdash; designed for agents to record fixes without interactive prompts.
+        <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">vb fix</code> accepts <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--summary</code>, <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--root-cause</code>, and <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--prevention</code> flags with <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--json</code> output &mdash; designed for agents to record fixes without prompts. Works with any agent that can run terminal commands.
       </p>
     </div>
   </section>

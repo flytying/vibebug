@@ -177,29 +177,72 @@ vb fix --last --summary "Added null check for undefined response"
 vb summary
 ```
 
+**7) Add VibeBug to your AI agent (optional but recommended)**
+
+If you use Claude Code, Cursor, or Cline, add the rules below so your agent uses `vb` automatically. See [Using with AI agents](#using-with-ai-agents) for copy-pasteable templates.
+
 ---
 
 ## Using with AI agents
 
-If you use Cursor, Claude Code, Cline, or similar AI coding tools, tell your agent to prefix terminal commands with `vb`. This is a one-time setup — the agent will use it from then on.
+If you use Claude Code, Cursor, Cline, or similar AI coding tools, add VibeBug rules to your project so the agent uses `vb` automatically. This is a one-time setup per project.
 
-**Claude Code** — add to your project's `CLAUDE.md`:
+### Claude Code
+
+Add to your project's `CLAUDE.md`:
+
+```markdown
+## VibeBug — Failure Tracking
+
+This project uses VibeBug for automatic failure tracking.
+
+- Prefix all build, test, typecheck, and lint commands with `vb`
+  Examples: `vb npm run build`, `vb npm test`, `vb npx tsc`, `vb pytest`
+- After fixing a failure, record what you changed:
+  vb fix --last --summary "<what you changed>" --root-cause "<why it broke>" --prevention "<how to avoid>" --json
+- Before starting work, check for open failures: `vb list`
+- Do not repeat fixes that have already been tried — check the failure history first
+```
+
+### Cursor
+
+Add to `.cursor/rules` in your project root:
 
 ```
-When running build, test, or compile commands, prefix them with `vb` for failure tracking (e.g., `vb npm run build`, `vb pytest`, `vb npx tsc`).
-After fixing a failure, run: vb fix --last --summary "<what you changed>" --json
+## VibeBug — Failure Tracking
+
+This project uses VibeBug for automatic failure tracking.
+
+- Prefix all build, test, typecheck, and lint commands with `vb`
+  Examples: `vb npm run build`, `vb npm test`, `vb npx tsc`, `vb pytest`
+- After fixing a failure, record what you changed:
+  vb fix --last --summary "<what you changed>" --root-cause "<why it broke>" --prevention "<how to avoid>" --json
+- Before starting work, check for open failures: `vb list`
+- Do not repeat fixes that have already been tried — check the failure history first
 ```
 
-**Cursor** — add to `.cursor/rules`:
+### Cline
+
+Add to your project's `.clinerules` file:
 
 ```
-Prefix build/test/compile commands with `vb` for failure tracking.
-After fixing a failure, run: vb fix --last --summary "<what you changed>" --json
+## VibeBug — Failure Tracking
+
+This project uses VibeBug for automatic failure tracking.
+
+- Prefix all build, test, typecheck, and lint commands with `vb`
+  Examples: `vb npm run build`, `vb npm test`, `vb npx tsc`, `vb pytest`
+- After fixing a failure, record what you changed:
+  vb fix --last --summary "<what you changed>" --root-cause "<why it broke>" --prevention "<how to avoid>" --json
+- Before starting work, check for open failures: `vb list`
+- Do not repeat fixes that have already been tried — check the failure history first
 ```
 
-**Other agents** — add similar instructions to your agent's system prompt or project rules.
+### Other agents
 
-VibeBug's `vb fix` command is designed for agents — it accepts `--summary`, `--root-cause`, and `--prevention` flags with `--json` output so agents can record what they fixed without interactive prompts.
+Add the same instructions to your agent's system prompt or project rules file. The key rules are: prefix commands with `vb`, and record fixes with `vb fix --last --summary "..." --json`.
+
+VibeBug's `vb fix` command is designed for non-interactive agent use — it accepts `--summary`, `--root-cause`, and `--prevention` flags with `--json` output so agents can record what they fixed without prompts.
 
 ---
 
