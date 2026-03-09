@@ -1,12 +1,8 @@
 # VibeBug
 
-**Automatic failure tracking for vibe coding.**
+**Your terminal failures, remembered automatically.**
 
-Track build, test, and runtime failures from your terminal — automatically.
-
-See what keeps breaking. Stop repeating the same fixes.
-
-VibeBug is a local-first CLI tool that captures command-line failures automatically — build errors, test failures, type errors, runtime crashes. It groups recurring breakage, tracks regressions, estimates AI cost, and serves a local dashboard. Prefix your usual commands with `vb`, and VibeBug does the rest.
+A local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.
 
 ![VibeBug dashboard overview](./docs/assets/vibebug-dashboard-overview.png)
 
@@ -14,107 +10,65 @@ VibeBug is a local-first CLI tool that captures command-line failures automatica
 
 ## Why it exists
 
-AI-assisted coding speeds up output, but it also creates a lot of repeated breakage.
+When you code with AI, failures pile up quickly.
 
-Build failures, test failures, type errors, and runtime errors pile up quickly. They flash by in terminal history, fixes get repeated, and it becomes hard to learn from what already happened.
+A build breaks. A test fails. You ask the agent to fix it. It does — then it breaks again. You lose the error in terminal scrollback, forget what you already tried, and end up debugging the same issue from scratch.
 
-VibeBug exists to make those failures visible and useful.
+Most of the problem is not the failure itself. It's the lack of memory around it.
 
-Instead of losing the trail, you get a local history of:
-
-- what fails most often
-- what came back after being fixed
-- which commands create the most friction
-- where debugging effort and AI cost are going
+VibeBug gives your terminal a memory.
 
 ---
 
 ## What it does
 
-VibeBug helps you answer one question:
+A local-first CLI that quietly tracks failures while you work.
 
-**What keeps breaking?**
+VibeBug wraps your normal terminal commands and watches for build, test, and runtime failures in the background. You keep using your tools as usual. VibeBug simply captures what failed, groups recurring issues together, and helps you see patterns over time.
 
-It wraps your existing commands and gives you a lightweight failure memory for your project.
+- **Spot recurring failures** — see which issues keep returning instead of treating every failure like a brand-new problem
+- **Catch regressions** — when something breaks again after being fixed, VibeBug flags it so it doesn't silently re-enter the loop
+- **Understand AI debugging cost** — estimate how much repeated failures are costing you in AI-assisted debugging
+- **Keep useful context** — track failure history with command, git context, and fixes so debugging doesn't start from zero every time
 
-- capture build, test, and runtime failures automatically
-- group recurring failures into the same capture
-- detect when a previously fixed failure comes back
-- track fix attempts over time
-- estimate AI-debugging cost
-- open a local dashboard to see recurring friction
-- generate share-safe summaries for posts, docs, or team updates
+Same commands. Same output. More visibility.
 
 ---
 
 ## How it works
 
-Run your commands like this:
-
 ```bash
 vb npm run build
 vb pytest
-vb npx tsc
+vb cargo test
 ```
 
-If the command fails, VibeBug captures the failure automatically.
-
-Then you can:
-
-- open the local dashboard to see what keeps breaking
-- record what fixed a failure
-- export or copy a share-safe summary
+1. **Prefix with `vb`** — run your usual build, test, or dev commands through VibeBug
+2. **Failures are captured** — VibeBug detects failed commands and watches for runtime errors in terminal output
+3. **See what breaks** — review captures in the terminal or open the local dashboard to see recurring bugs, regressions, and estimated AI debugging cost
 
 ---
 
 ## Who it's for
 
-VibeBug is for builders who are moving fast with AI and keep running into the same failures:
+Made for developers coding fast with AI.
 
-- errors disappear in terminal scrollback
-- you forget what you already tried
-- the same breakage comes back later
-- debugging loops burn time and tokens
-- there's no simple way to see recurring friction
+VibeBug is especially useful for developers who:
 
-Best fit right now:
+- work heavily with AI coding tools
+- run lots of terminal commands during build and debugging
+- keep hitting repeat failures across the same project
+- want lightweight visibility without changing how they work
 
-- solo builders using AI-heavy workflows
-- indie hackers shipping quickly with Cursor, Claude Code, Cline, or similar tools
-- open-source tool builders and tinkerers
-- anyone who wants lightweight failure tracking without setting up cloud infrastructure
+Indie builders · AI-heavy developers · Open-source tool makers · Fast-moving side projects
 
 ---
 
-## Why local-first matters
+## Your failure data stays with you
 
-VibeBug is designed to be local-first.
+VibeBug stores its data locally in your project. No cloud account is required. When you generate summaries or exports, sensitive details like paths and tokens can be sanitized to make sharing safer.
 
-Your failure data stays in your project under `.vibebug/` using a local SQLite database. You can inspect it, export it, and delete it whenever you want. No cloud account is required.
-
-This makes VibeBug:
-
-- fast to start
-- easy to trust
-- useful for solo workflows
-- safer for local development logs
-
----
-
-## Share-safe by default
-
-VibeBug is built to make sharing safer.
-
-Summaries and markdown exports are designed to strip or redact common sensitive details such as:
-
-- absolute paths
-- terminal formatting noise
-- token-like strings
-- environment variable values
-
-That makes it easier to share a screenshot, paste a summary, or post a report without exposing raw local machine details.
-
-You should still review anything before sharing publicly.
+No cloud by default. No account required. Share on your terms.
 
 ---
 
@@ -235,29 +189,24 @@ VibeBug's `vb fix` command is designed for non-interactive agent use — it acce
 ## Example summary
 
 ```
-VibeBug Summary — my-project
-─────────────────────────────
-Runs: 14 today (5 failed) · 312 total
-Open captures: 3 · Resolved: 2 · Regressions: 1
-Est. AI spend: $2.43
+Project Failure Summary
+Open captures: 12
+Recurring failures: 4
+Regressions: 2
+Estimated AI debugging cost: $18.40
 
-Top recurring failures:
-  1. TypeError: Cannot read properties of undefined (4x)
-  2. error TS2339: Property does not exist on type (3x)
-  3. Module not found: Can't resolve './Button' (2x)
+Top recurring failures
+1. TypeScript build error in src/lib/parser.ts
+2. Pytest fixture setup failure in tests/api/test_jobs.py
+3. Dev server runtime error: missing env var STRIPE_SECRET_KEY
 
-Most expensive (est. AI cost):
-  1. TypeError: Cannot read properties of undefined — $0.82
-  2. error TS2339: Property does not exist on type — $0.64
-  3. Module not found: Can't resolve './Button' — $0.38
+Most failing commands
+- npm run build
+- pytest
+- npm run dev
 
-Regressions (fixed, then broke again):
-  1. TypeError: Cannot read properties of undefined (resolved → recurred)
-
-Top failing commands:
-  1. npm run build — 3x
-  2. npm test — 2x
-  3. npx tsc — 2x
+Latest regression
+- Previously resolved build error returned on feature/onboarding-redesign
 ```
 
 ---
@@ -265,14 +214,13 @@ Top failing commands:
 ## Core commands
 
 ```bash
-vb <command>                 # wrap a command and auto-capture failures
-vb init                      # initialize VibeBug in the current project
-vb dash                      # open the local dashboard
-vb fix --last --summary "…"  # record what fixed the latest open capture
-vb list                      # list captured failures
-vb summary                   # print a compact share-safe summary
-vb export --format markdown  # export a share-safe markdown report
-vb ignore list               # view ignored noise patterns
+vb <command>      # Run a command while VibeBug watches for failures
+vb dash           # Open the local dashboard
+vb list           # View captured failures in the terminal
+vb fix --last     # Record what fixed the latest failure
+vb summary        # Generate a shareable project failure summary
+vb export         # Export data as JSON, CSV, or Markdown
+vb ignore         # Suppress noisy patterns
 ```
 
 ---
@@ -298,37 +246,33 @@ VibeBug today is **not**:
 
 ## FAQ
 
-**Does VibeBug slow down my commands?**
+**Does VibeBug change how my command runs?**
 
-No. VibeBug runs your command exactly as you would, then captures the output if it fails. There is no meaningful overhead.
+No. Your command runs normally and output still flows through the terminal as expected.
 
-**Does VibeBug send my logs to the cloud?**
+**Does it send my logs to the cloud?**
 
-No. VibeBug is local-first. Your data stays in your project unless you choose to export or share it.
+No. VibeBug is local-first and stores data locally by default.
 
-**Is it safe to share summaries?**
+**Do I need to change my workflow?**
 
-VibeBug is designed to make summaries share-safe by default, but you should still review outputs before posting publicly.
+No. You just prefix commands with `vb` and keep working as usual.
 
-**Does it work only with AI tools?**
+**Is it only for AI coding?**
 
-No. VibeBug works with any command that can fail. But it is especially useful when coding with AI, because failures tend to be more repetitive and harder to keep track of.
+No, but it is especially useful for AI-assisted workflows where failures are frequent, repeated, and easy to lose in terminal output.
+
+**Can I share results safely?**
+
+Yes. Summaries and exports are designed to be share-safe, with sanitization for sensitive details.
 
 **What kinds of failures does VibeBug track?**
 
-Build errors, test failures, type errors, runtime crashes — anything that produces a non-zero exit code. VibeBug captures the output, groups recurring failures, and tracks regressions automatically.
-
-**Does it replace GitHub Issues, Linear, or Jira?**
-
-No. VibeBug is for local failure tracking and debugging visibility. It helps you understand recurring breakage during development. It is not a replacement for full team planning or project management tools.
-
-**Is VibeBug a bug tracker?**
-
-Not in the traditional sense. VibeBug doesn't do manual filing, assignment, or project management. It automatically captures command-line failures — build errors, test failures, type errors, runtime crashes — groups recurring ones, and tracks regressions. Think of it as a failure memory for your terminal.
+VibeBug captures failed commands and can also detect runtime errors from terminal output, including cases where a process keeps running instead of exiting immediately.
 
 **How does AI cost estimation work?**
 
-Every time VibeBug captures a failure, it estimates how many tokens the error log would consume and calculates an approximate cost based on current model pricing (Claude Sonnet by default). It’s a rough estimate for visibility — not a billing tool — designed to help you spot which recurring failures are eating the most AI debugging effort.
+Every time VibeBug captures a failure, it estimates how many tokens the error log would consume and calculates an approximate cost based on current model pricing (Claude Sonnet by default). It is a rough estimate for visibility — not a billing tool — designed to help you spot which recurring failures are eating the most AI debugging effort.
 
 ---
 
