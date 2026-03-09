@@ -680,36 +680,74 @@
   </section>
 
 
-  <!-- ============ SECTION 11+12: WHO IT'S FOR + WHAT YOU GET ============ -->
+  <!-- ============ SECTION 11+12: WHO IT'S FOR + WHAT YOU GET (TABBED) ============ -->
   <section class="py-20 md:py-28 bg-slate-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 fade-in">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        <!-- Left: Who it's for -->
+      <!-- Toggle tabs -->
+      <div class="flex gap-1 mb-12 bg-slate-800 rounded-full p-1 max-w-xs">
+        <button id="tab-who" onclick="switchTab('who')" class="tab-btn flex-1 text-sm font-semibold py-2.5 px-5 rounded-full transition-all bg-white text-slate-900">Who it's for</button>
+        <button id="tab-get" onclick="switchTab('get')" class="tab-btn flex-1 text-sm font-semibold py-2.5 px-5 rounded-full transition-all text-slate-400 hover:text-white">What you get</button>
+      </div>
+
+      <!-- Panel: Who it's for -->
+      <div id="panel-who" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: text -->
         <div>
-          <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-400 mb-4">Who it's for</span>
-          <p class="text-base sm:text-lg text-slate-400 leading-relaxed mb-8">
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-6">
             Built for developers who code fast, run lots of terminal commands, and want to stop rediscovering the same failures.
           </p>
-
-          <!-- Audience chips -->
-          <div class="flex flex-wrap gap-2.5 mb-10">
+          <div class="flex flex-wrap gap-2.5">
             <span class="text-sm font-semibold text-white">AI-assisted coding workflows</span>
-            <span class="text-sm text-slate-500">·</span>
+            <span class="text-sm text-slate-600">·</span>
             <span class="text-sm font-semibold text-white">Indie builders</span>
-            <span class="text-sm text-slate-500">·</span>
+            <span class="text-sm text-slate-600">·</span>
             <span class="text-sm font-semibold text-white">Open-source tool makers</span>
-            <span class="text-sm text-slate-500">·</span>
+            <span class="text-sm text-slate-600">·</span>
             <span class="text-sm font-semibold text-white">Fast-moving side projects</span>
           </div>
-
-          <div class="border-t border-slate-700/50 pt-10">
-            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-400 mb-4">What you get</span>
-            <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
-              A compact, share-safe summary of what keeps breaking, what came back, and where debugging time is going.
-            </p>
+        </div>
+        <!-- Right: icon cards -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-slate-800 rounded-2xl border border-slate-700/50 p-5">
+            <div class="w-12 h-12 bg-brand-500/20 rounded-xl flex items-center justify-center mb-3">
+              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+            </div>
+            <p class="text-sm text-slate-300 font-medium">AI-heavy workflows</p>
+            <p class="text-xs text-slate-500 mt-1">Failures pile up fast with AI coding</p>
+          </div>
+          <div class="bg-slate-800 rounded-2xl border border-slate-700/50 p-5">
+            <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-3">
+              <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
+            </div>
+            <p class="text-sm text-slate-300 font-medium">Terminal-heavy builds</p>
+            <p class="text-xs text-slate-500 mt-1">Lots of commands, lots of output</p>
+          </div>
+          <div class="bg-slate-800 rounded-2xl border border-slate-700/50 p-5">
+            <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-3">
+              <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3"/></svg>
+            </div>
+            <p class="text-sm text-slate-300 font-medium">Repeat failures</p>
+            <p class="text-xs text-slate-500 mt-1">Same bugs keep coming back</p>
+          </div>
+          <div class="bg-slate-800 rounded-2xl border border-slate-700/50 p-5">
+            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-3">
+              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+            </div>
+            <p class="text-sm text-slate-300 font-medium">Zero overhead</p>
+            <p class="text-xs text-slate-500 mt-1">No workflow change needed</p>
           </div>
         </div>
+      </div>
 
+      <!-- Panel: What you get -->
+      <div id="panel-get" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center hidden">
+        <!-- Left: text -->
+        <div>
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-6">
+            A compact, share-safe summary of what keeps breaking, what came back, and where debugging time is going.
+          </p>
+          <p class="text-sm text-slate-500">Useful for personal review, team context, or sharing what actually keeps breaking.</p>
+        </div>
         <!-- Right: Terminal summary -->
         <div class="bg-slate-800 rounded-2xl p-5 sm:p-6 terminal-glow">
           <div class="flex items-center gap-2 mb-5">
@@ -922,6 +960,29 @@
         }
       });
     });
+
+    // Section toggle (Who it's for / What you get)
+    function switchTab(tab) {
+      const panelWho = document.getElementById('panel-who');
+      const panelGet = document.getElementById('panel-get');
+      const tabWho = document.getElementById('tab-who');
+      const tabGet = document.getElementById('tab-get');
+      if (tab === 'who') {
+        panelWho.classList.remove('hidden');
+        panelGet.classList.add('hidden');
+        tabWho.classList.add('bg-white', 'text-slate-900');
+        tabWho.classList.remove('text-slate-400', 'hover:text-white');
+        tabGet.classList.remove('bg-white', 'text-slate-900');
+        tabGet.classList.add('text-slate-400', 'hover:text-white');
+      } else {
+        panelGet.classList.remove('hidden');
+        panelWho.classList.add('hidden');
+        tabGet.classList.add('bg-white', 'text-slate-900');
+        tabGet.classList.remove('text-slate-400', 'hover:text-white');
+        tabWho.classList.remove('bg-white', 'text-slate-900');
+        tabWho.classList.add('text-slate-400', 'hover:text-white');
+      }
+    }
 
     // Copy install command
     function copyInstall() {
