@@ -266,40 +266,51 @@
 
   <!-- ============ WHY IT EXISTS ============ -->
   <section class="py-20 md:py-28 bg-brand-50/40">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
-      <div class="text-center mb-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+      <div class="text-center mb-12">
         <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">Why It Exists</span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
           AI speeds up coding.<br class="hidden sm:block">
           It also speeds up <span class="text-brand-600">breakage</span>.
         </h2>
-      </div>
-      <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-        <p>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Build failures, test failures, type errors, and runtime errors pile up quickly. They flash by in terminal history, fixes get repeated, and it becomes hard to learn from what already happened.
         </p>
-        <p class="font-semibold text-slate-900">
-          VibeBug exists to make those failures visible and useful.
-        </p>
-        <p>Instead of losing the trail, you get a local history of:</p>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base">
-          <li class="flex items-start gap-2.5">
-            <svg class="w-5 h-5 text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span>What fails most often</span>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <svg class="w-5 h-5 text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span>What came back after being fixed</span>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <svg class="w-5 h-5 text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span>Which commands create the most friction</span>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <svg class="w-5 h-5 text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span>Where debugging effort and AI cost are going</span>
-          </li>
-        </ul>
+      </div>
+      <p class="text-center text-lg font-semibold text-slate-900 mb-8">VibeBug exists to make those failures visible and useful.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- What fails most -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
+          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">What fails most</h3>
+          <p class="text-sm text-slate-500">See which errors keep recurring across your builds, tests, and runs.</p>
+        </div>
+        <!-- What came back -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
+          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">What came back</h3>
+          <p class="text-sm text-slate-500">Detect regressions &mdash; failures that were fixed but reappeared.</p>
+        </div>
+        <!-- Friction hotspots -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
+          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">Friction hotspots</h3>
+          <p class="text-sm text-slate-500">Find which commands create the most breakage in your workflow.</p>
+        </div>
+        <!-- AI cost -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
+          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">AI cost tracking</h3>
+          <p class="text-sm text-slate-500">See where debugging effort and AI token spend are going.</p>
+        </div>
       </div>
     </div>
   </section>
