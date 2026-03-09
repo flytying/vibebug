@@ -680,13 +680,14 @@
   </section>
 
 
-  <!-- ============ SECTION 11+12: WHO IT'S FOR + WHAT YOU GET (TABBED) ============ -->
+  <!-- ============ SECTION 11+12: WHO IT'S FOR + WHAT YOU GET ============ -->
   <section class="py-20 md:py-28 bg-slate-900">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 fade-in">
-      <!-- Toggle tabs -->
-      <div class="flex gap-1 mb-12 bg-slate-800 rounded-full p-1 max-w-xs">
-        <button id="tab-who" onclick="switchTab('who')" class="tab-btn flex-1 text-sm font-semibold py-2.5 px-5 rounded-full transition-all bg-white text-slate-900">Who it's for</button>
-        <button id="tab-get" onclick="switchTab('get')" class="tab-btn flex-1 text-sm font-semibold py-2.5 px-5 rounded-full transition-all text-slate-400 hover:text-white">What you get</button>
+      <!-- Inline heading navigation -->
+      <div class="flex items-baseline gap-4 sm:gap-6 mb-12">
+        <h2 id="heading-who" onclick="switchTab('who')" class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight cursor-pointer transition-colors text-white">Who it's for</h2>
+        <span class="text-slate-600 text-2xl sm:text-3xl font-light select-none">/</span>
+        <h2 id="heading-get" onclick="switchTab('get')" class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight cursor-pointer transition-colors text-slate-600 hover:text-slate-400">What you get</h2>
       </div>
 
       <!-- Panel: Who it's for -->
@@ -965,22 +966,22 @@
     function switchTab(tab) {
       const panelWho = document.getElementById('panel-who');
       const panelGet = document.getElementById('panel-get');
-      const tabWho = document.getElementById('tab-who');
-      const tabGet = document.getElementById('tab-get');
+      const headingWho = document.getElementById('heading-who');
+      const headingGet = document.getElementById('heading-get');
       if (tab === 'who') {
         panelWho.classList.remove('hidden');
         panelGet.classList.add('hidden');
-        tabWho.classList.add('bg-white', 'text-slate-900');
-        tabWho.classList.remove('text-slate-400', 'hover:text-white');
-        tabGet.classList.remove('bg-white', 'text-slate-900');
-        tabGet.classList.add('text-slate-400', 'hover:text-white');
+        headingWho.classList.add('text-white');
+        headingWho.classList.remove('text-slate-600', 'hover:text-slate-400');
+        headingGet.classList.remove('text-white');
+        headingGet.classList.add('text-slate-600', 'hover:text-slate-400');
       } else {
         panelGet.classList.remove('hidden');
         panelWho.classList.add('hidden');
-        tabGet.classList.add('bg-white', 'text-slate-900');
-        tabGet.classList.remove('text-slate-400', 'hover:text-white');
-        tabWho.classList.remove('bg-white', 'text-slate-900');
-        tabWho.classList.add('text-slate-400', 'hover:text-white');
+        headingGet.classList.add('text-white');
+        headingGet.classList.remove('text-slate-600', 'hover:text-slate-400');
+        headingWho.classList.remove('text-white');
+        headingWho.classList.add('text-slate-600', 'hover:text-slate-400');
       }
     }
 
