@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VibeBug — Automatic Failure Tracking for Vibe Coding</title>
-  <meta name="description" content="Track build, test, and runtime failures from your terminal — automatically. Local-first CLI tool for developers coding fast with AI.">
+  <title>VibeBug — Your terminal failures, remembered automatically</title>
+  <meta name="description" content="VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.">
 
   <!-- SEO -->
   <link rel="canonical" href="https://vibebug.dev/">
@@ -15,16 +15,16 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vibebug.dev/">
-  <meta property="og:title" content="VibeBug — Automatic Failure Tracking for Vibe Coding">
-  <meta property="og:description" content="Track build, test, and runtime failures from your terminal — automatically. Local-first CLI tool for developers coding fast with AI.">
+  <meta property="og:title" content="VibeBug — Your terminal failures, remembered automatically">
+  <meta property="og:description" content="VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.">
   <meta property="og:image" content="https://vibebug.dev/assets/vibebug-dashboard-overview.png">
   <meta property="og:site_name" content="VibeBug">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VibeBug — Automatic Failure Tracking for Vibe Coding">
-  <meta name="twitter:description" content="Track build, test, and runtime failures from your terminal — automatically. Local-first CLI tool for developers coding fast with AI.">
+  <meta name="twitter:title" content="VibeBug — Your terminal failures, remembered automatically">
+  <meta name="twitter:description" content="VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.">
   <meta name="twitter:image" content="https://vibebug.dev/assets/vibebug-dashboard-overview.png">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c5cfc'/><path d='M30 42h40M30 58h40M38 28l4 8M62 28l-4 8M38 72l4-8M62 72l-4-8M42 36c0-4.4 3.6-8 8-8s8 3.6 8 8M42 36v24c0 4.4 3.6 8 8 8s8-3.6 8-8V36M50 36v32' stroke='white' stroke-width='5' stroke-linecap='round' fill='none'/></svg>">
@@ -79,7 +79,7 @@
     "@type": "SoftwareApplication",
     "name": "VibeBug",
     "url": "https://vibebug.dev",
-    "description": "Track build, test, and runtime failures from your terminal — automatically. Local-first CLI tool for developers coding fast with AI.",
+    "description": "VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI.",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "macOS, Linux, Windows",
     "offers": {
@@ -104,50 +104,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Does VibeBug slow down my commands?",
+        "name": "Does VibeBug change how my command runs?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. VibeBug runs your command exactly as you would, then captures the output if it fails. There is no meaningful overhead."
+          "text": "No. Your command runs normally and output still flows through the terminal as expected."
         }
       },
       {
         "@type": "Question",
-        "name": "Does VibeBug send my logs to the cloud?",
+        "name": "Does it send my logs to the cloud?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. VibeBug is local-first. Your data stays in your project unless you choose to export or share it."
+          "text": "No. VibeBug is local-first and stores data locally by default."
         }
       },
       {
         "@type": "Question",
-        "name": "What kinds of failures does VibeBug track?",
+        "name": "Do I need to change my workflow?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Build errors, test failures, type errors, runtime crashes — anything that produces a non-zero exit code. VibeBug captures the output, groups recurring failures, and tracks regressions automatically."
+          "text": "No. You just prefix commands with vb and keep working as usual."
         }
       },
       {
         "@type": "Question",
-        "name": "Does it replace GitHub Issues, Linear, or Jira?",
+        "name": "Is it only for AI coding?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. VibeBug is for local failure tracking and debugging visibility. It helps you understand recurring breakage during development. It is not a replacement for full team planning or project management tools."
+          "text": "No, but it is especially useful for AI-assisted workflows where failures are frequent, repeated, and easy to lose in terminal output."
         }
       },
       {
         "@type": "Question",
-        "name": "Is VibeBug a bug tracker?",
+        "name": "Can I share results safely?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not in the traditional sense. VibeBug doesn't do manual filing, assignment, or project management. It automatically captures command-line failures — build errors, test failures, type errors, runtime crashes — groups recurring ones, and tracks regressions. Think of it as a failure memory for your terminal."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does AI cost estimation work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Every time VibeBug captures a failure, it estimates how many tokens the error log would consume and calculates an approximate cost based on current model pricing. It's a rough estimate for visibility — not a billing tool — designed to help you spot which recurring failures are eating the most AI debugging effort."
+          "text": "Yes. Summaries and exports are designed to be share-safe, with sanitization for sensitive details."
         }
       }
     ]
@@ -161,697 +153,624 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-2.5">
-          <div class="w-7 h-7 rounded-lg bg-brand-500 flex items-center justify-center">
-            <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>
+        <a href="#" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>
           </div>
-          <span class="text-[15px] font-semibold tracking-tight text-slate-900">VibeBug</span>
+          <span class="text-[17px] font-bold tracking-tight">VibeBug</span>
         </a>
         <!-- Desktop links -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="#features" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Features</a>
-          <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">How It Works</a>
-          <a href="#commands" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Commands</a>
-          <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">FAQ</a>
+          <a href="#how-it-works" class="text-sm text-slate-500 hover:text-slate-900 transition-colors">How It Works</a>
+          <a href="#benefits" class="text-sm text-slate-500 hover:text-slate-900 transition-colors">Benefits</a>
+          <a href="#commands" class="text-sm text-slate-500 hover:text-slate-900 transition-colors">Commands</a>
+          <a href="#faq" class="text-sm text-slate-500 hover:text-slate-900 transition-colors">FAQ</a>
         </div>
-        <!-- CTA -->
-        <div class="flex items-center gap-3">
-          <a href="https://github.com/flytying/vibebug" target="_blank" class="hidden sm:flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
+        <!-- Right side -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="https://github.com/flytying/vibebug" target="_blank" class="text-slate-400 hover:text-slate-600 transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           </a>
-          <a href="#install" class="bg-slate-900 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-slate-800 transition-colors">
-            Install
-          </a>
-          <!-- Mobile menu toggle -->
-          <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          </button>
+          <a href="#install" class="bg-brand-500 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-brand-600 transition-colors shadow-sm">Install</a>
         </div>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-500 hover:text-slate-900">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
       <!-- Mobile menu -->
       <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-slate-100 mt-2 pt-4">
         <div class="flex flex-col gap-3">
-          <a href="#features" class="text-sm font-medium text-slate-600 hover:text-slate-900 py-1">Features</a>
-          <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-slate-900 py-1">How It Works</a>
-          <a href="#commands" class="text-sm font-medium text-slate-600 hover:text-slate-900 py-1">Commands</a>
-          <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-slate-900 py-1">FAQ</a>
+          <a href="#how-it-works" class="text-sm text-slate-600 hover:text-brand-600">How It Works</a>
+          <a href="#benefits" class="text-sm text-slate-600 hover:text-brand-600">Benefits</a>
+          <a href="#commands" class="text-sm text-slate-600 hover:text-brand-600">Commands</a>
+          <a href="#faq" class="text-sm text-slate-600 hover:text-brand-600">FAQ</a>
+          <a href="https://github.com/flytying/vibebug" target="_blank" class="text-sm text-slate-600 hover:text-brand-600">GitHub</a>
+          <a href="#install" class="bg-brand-500 text-white text-sm font-medium px-4 py-2 rounded-full text-center hover:bg-brand-600 transition-colors w-fit">Install</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
+
+  <!-- ============ SECTION 1: HERO ============ -->
   <section class="relative pt-32 pb-8 md:pt-40 md:pb-12 hero-glow">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 bg-brand-100/60 border border-brand-200/60 rounded-full px-4 py-1.5 mb-8">
-        <span class="w-2 h-2 bg-brand-500 rounded-full"></span>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 bg-brand-50 border border-brand-100 rounded-full px-4 py-1.5 mb-8">
+        <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
         <span class="text-sm font-medium text-brand-700">For anyone building with AI</span>
       </div>
-      <!-- Headline -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-4">
-        A failure memory for<br class="hidden sm:block"> <span class="text-brand-600">AI-assisted coding</span>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-slate-900 mb-6">
+        Your terminal failures,<br>
+        <span class="gradient-text">remembered automatically.</span>
       </h1>
-      <!-- Subtitle -->
-      <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Your terminal forgets every failure. VibeBug doesn't. It remembers what keeps breaking, what was tried, and what came back. Prefix any command with <code class="text-sm bg-slate-100 px-1.5 py-0.5 rounded font-mono">vb</code> and it does the rest.
+
+      <p class="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-10">
+        VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI &mdash; so you can see what keeps breaking, what came back, and what debugging is costing you.
       </p>
-      <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-        <a href="#install" class="w-full sm:w-auto sm:min-w-[220px] text-center bg-brand-500 text-white text-base font-semibold px-8 py-3.5 rounded-full hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20">
-          Install the CLI
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+        <a href="#install" class="bg-brand-500 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-brand-600 transition-all shadow-lg shadow-brand-500/20 text-base">
+          Install VibeBug
         </a>
-        <a href="https://github.com/flytying/vibebug" target="_blank" class="w-full sm:w-auto sm:min-w-[220px] flex items-center justify-center gap-2 bg-white text-slate-700 text-base font-semibold px-8 py-3.5 rounded-full border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <a href="https://github.com/flytying/vibebug" target="_blank" class="flex items-center gap-2 border border-slate-200 bg-white text-slate-700 font-medium px-8 py-3.5 rounded-full hover:border-slate-300 hover:bg-slate-50 transition-all text-base">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           View on GitHub
         </a>
       </div>
-      <!-- Social proof -->
-      <div class="flex items-center justify-center gap-4 mb-10 text-sm text-slate-500">
-        <a href="https://github.com/flytying/vibebug" target="_blank" class="inline-flex items-center gap-1.5 hover:text-slate-700 transition-colors">
-          <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Open source &middot; MIT Licensed
-        </a>
-        <span class="text-slate-300">|</span>
-        <span>No accounts &middot; No cloud &middot; No config</span>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ DASHBOARD SCREENSHOT ============ -->
-  <section class="pb-20 md:pb-32">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
-      <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-50/50 to-transparent rounded-3xl -m-4"></div>
-        <img
-          src="assets/vibebug-dashboard-overview.png"
-          alt="VibeBug dashboard showing captured failures, regressions, and debugging insights"
-          class="relative w-full rounded-2xl border border-slate-200/80 shadow-2xl"
-        >
-      </div>
-      <!-- Works with -->
-      <h3 class="text-xl font-bold text-slate-900 mb-5 text-center mt-12">Works with any command that can fail</h3>
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-100 rounded-lg px-3 py-1.5 text-sm font-mono text-slate-500">vb npm run build</span>
-        <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-100 rounded-lg px-3 py-1.5 text-sm font-mono text-slate-500">vb pytest</span>
-        <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-100 rounded-lg px-3 py-1.5 text-sm font-mono text-slate-500">vb npx tsc</span>
-        <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-100 rounded-lg px-3 py-1.5 text-sm font-mono text-slate-500">vb cargo build</span>
-        <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-100 rounded-lg px-3 py-1.5 text-sm font-mono text-slate-500">vb go test</span>
-        <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-100 rounded-lg px-3 py-1.5 text-sm font-mono text-slate-500">vb make</span>
-      </div>
-      <p class="text-center text-sm text-slate-500 mt-5">VibeBug tracks recurring failures, regressions, fix history, and estimated AI token spend across your sessions.</p>
-    </div>
-  </section>
-
-  <!-- ============ WHY IT EXISTS ============ -->
-  <section class="py-20 md:py-28 bg-brand-50/40">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
-      <div class="text-center mb-12">
-        <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">Why It Exists</span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
-          AI speeds up coding.<br class="hidden sm:block">
-          It also speeds up <span class="text-brand-600">breakage</span>.
-        </h2>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Build failures, test failures, type errors, and runtime errors pile up quickly. They flash by in terminal history, fixes get repeated, and it becomes hard to learn from what already happened.
-        </p>
-      </div>
-      <p class="text-center text-lg font-semibold text-slate-900 mb-3">VibeBug adds memory to your debugging loop.</p>
-      <p class="text-center text-sm text-slate-500 mb-8">Not a bug tracker. Not a ticketing system. A local-first failure memory for your terminal.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <!-- What fails most -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1.5">What fails most</h3>
-          <p class="text-sm text-slate-500">See which errors keep recurring across your builds, tests, and runs.</p>
-        </div>
-        <!-- What came back -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1.5">What came back</h3>
-          <p class="text-sm text-slate-500">Detect regressions &mdash; failures that were fixed but reappeared.</p>
-        </div>
-        <!-- Friction hotspots -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/></svg>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1.5">Friction hotspots</h3>
-          <p class="text-sm text-slate-500">Find which commands create the most breakage in your workflow.</p>
-        </div>
-        <!-- AI cost -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1.5">AI cost tracking</h3>
-          <p class="text-sm text-slate-500">See where debugging effort and AI token spend are going.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FEATURES ============ -->
-  <section id="features" class="py-20 md:py-28">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section header -->
-      <div class="text-center mb-16 fade-in">
-        <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">Features</span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-          Failure memory that<br class="hidden sm:block">
-          <span class="text-brand-600">compounds over time</span>
-        </h2>
-        <p class="text-lg text-slate-500 max-w-xl mx-auto">
-          Capture failures, group recurring breakage, detect regressions, track fixes, and share &mdash; all locally.
-        </p>
-      </div>
-      <!-- Feature grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Feature 1: Auto-capture -->
-        <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200/80 p-8 card-hover fade-in">
-          <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <div class="flex-1">
-              <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Auto-Capture Failures</h3>
-              <p class="text-slate-500 leading-relaxed">Prefix your commands with <code class="text-sm bg-slate-100 px-1.5 py-0.5 rounded font-mono">vb</code> and failures are captured automatically. No manual logging, no extra config. Just keep coding.</p>
-            </div>
-            <div class="md:w-64 bg-slate-900 rounded-xl p-4 font-mono text-sm shrink-0">
-              <div class="flex items-center gap-1.5 mb-3">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-              </div>
-              <div class="text-slate-400"><span class="text-brand-400">$</span> vb npm run build</div>
-              <div class="text-red-400 mt-1.5 text-xs">Error: Cannot find module './Button'</div>
-              <div class="text-brand-400 mt-1.5 text-xs">&#10003; Captured &middot; grouped with 2 similar</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 2: Smart Grouping -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-8 card-hover fade-in">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L12 12.75 6.429 9.75m11.142 0l4.179 2.25-9.75 5.25-9.75-5.25 4.179-2.25"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Smart Grouping</h3>
-          <p class="text-slate-500 leading-relaxed">Recurring failures get grouped into the same capture. Same error, same entry &mdash; no duplicate noise.</p>
-        </div>
-
-        <!-- Feature 3: Regression Detection -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-8 card-hover fade-in">
-          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Regression Detection</h3>
-          <p class="text-slate-500 leading-relaxed">VibeBug knows when a fixed failure comes back. Stop fixing the same thing twice.</p>
-        </div>
-
-        <!-- Feature 4: Fix Tracking -->
-        <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200/80 p-8 card-hover fade-in">
-          <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <div class="flex-1">
-              <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Fix Tracking</h3>
-              <p class="text-slate-500 leading-relaxed">Record what fixed a failure. Build a searchable history of what works so you never lose the solution again.</p>
-            </div>
-            <div class="md:w-64 bg-slate-900 rounded-xl p-4 font-mono text-sm shrink-0">
-              <div class="flex items-center gap-1.5 mb-3">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-              </div>
-              <div class="text-slate-400"><span class="text-brand-400">$</span> vb fix --last \</div>
-              <div class="text-slate-400">&nbsp; --summary <span class="text-amber-300">"Added null check"</span></div>
-              <div class="text-brand-400 mt-1.5 text-xs">&#10003; Marked as resolved</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 5: Share-Safe -->
-        <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200/80 p-8 card-hover fade-in">
-          <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <div class="flex-1">
-              <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Share-Safe Summaries</h3>
-              <p class="text-slate-500 leading-relaxed max-w-lg">Export redacted summaries that are safe to share. VibeBug strips absolute paths, terminal noise, token-like strings, and env variable values automatically.</p>
-            </div>
-            <div class="md:w-80 bg-slate-900 rounded-xl p-4 font-mono text-xs shrink-0">
-              <div class="flex items-center gap-1.5 mb-3">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-              </div>
-              <div class="text-slate-300">VibeBug Summary &mdash; my-project</div>
-              <div class="text-slate-500">&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</div>
-              <div class="text-slate-400 mt-1">Runs: <span class="text-white">14 today</span> (5 failed)</div>
-              <div class="text-slate-400">Open: <span class="text-red-400">3</span> &middot; Resolved: <span class="text-brand-400">2</span> &middot; Regressions: <span class="text-amber-400">1</span></div>
-              <div class="text-slate-400 mt-1">Est. AI spend: <span class="text-amber-300">$2.43</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 6: AI Cost Estimation -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-8 card-hover fade-in">
-          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">AI Cost Estimation</h3>
-          <p class="text-slate-500 leading-relaxed">See how much debugging is costing in AI tokens and time. Know where your spend is going.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ HOW IT WORKS ============ -->
-  <section id="how-it-works" class="py-20 md:py-28 bg-brand-50/40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section header -->
-      <div class="text-center mb-16 fade-in">
-        <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">How It Works</span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-          Three steps to<br class="hidden sm:block">
-          <span class="text-brand-600">stop losing track</span>
-        </h2>
-        <p class="text-lg text-slate-500 max-w-xl mx-auto">
-          No config files. No accounts. No cloud. Just prefix your commands.
-        </p>
-      </div>
-      <!-- Steps -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Step 1 -->
-        <div class="relative fade-in">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="flex items-center justify-center w-10 h-10 bg-brand-500 text-white text-sm font-bold rounded-full">1</span>
-            <div class="hidden md:block flex-1 h-px bg-slate-200"></div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Initialize</h3>
-          <p class="text-slate-500 mb-5">Run <code class="text-sm bg-slate-100 px-1.5 py-0.5 rounded font-mono">vb init</code> in your project. Creates a local <code class="text-sm bg-slate-100 px-1.5 py-0.5 rounded font-mono">.vibebug/</code> folder with a SQLite database.</p>
-          <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm terminal-glow">
-            <div class="flex items-center gap-1.5 mb-2.5">
-              <span class="w-2 h-2 rounded-full bg-red-400"></span>
-              <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
-              <span class="w-2 h-2 rounded-full bg-green-400"></span>
-            </div>
-            <div class="text-slate-300"><span class="text-brand-400">$</span> cd my-project</div>
-            <div class="text-slate-300"><span class="text-brand-400">$</span> vb init</div>
-            <div class="text-brand-400 mt-1 text-xs">&#10003; VibeBug initialized</div>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="relative fade-in">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="flex items-center justify-center w-10 h-10 bg-brand-500 text-white text-sm font-bold rounded-full">2</span>
-            <div class="hidden md:block flex-1 h-px bg-slate-200"></div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Run Commands</h3>
-          <p class="text-slate-500 mb-5">Prefix your usual commands with <code class="text-sm bg-slate-100 px-1.5 py-0.5 rounded font-mono">vb</code>. If they fail, VibeBug captures it automatically.</p>
-          <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm terminal-glow">
-            <div class="flex items-center gap-1.5 mb-2.5">
-              <span class="w-2 h-2 rounded-full bg-red-400"></span>
-              <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
-              <span class="w-2 h-2 rounded-full bg-green-400"></span>
-            </div>
-            <div class="text-slate-300"><span class="text-brand-400">$</span> vb npm run build</div>
-            <div class="text-red-400 mt-1 text-xs">ERR! Cannot find module</div>
-            <div class="text-brand-400 mt-0.5 text-xs">&#10003; Failure captured</div>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="relative fade-in">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="flex items-center justify-center w-10 h-10 bg-brand-500 text-white text-sm font-bold rounded-full">3</span>
-            <div class="hidden md:block flex-1 h-px bg-slate-200"></div>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">See What Breaks</h3>
-          <p class="text-slate-500 mb-5">Open the local dashboard to see recurring failures, regressions, and token spends.</p>
-          <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm terminal-glow">
-            <div class="flex items-center gap-1.5 mb-2.5">
-              <span class="w-2 h-2 rounded-full bg-red-400"></span>
-              <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
-              <span class="w-2 h-2 rounded-full bg-green-400"></span>
-            </div>
-            <div class="text-slate-300"><span class="text-brand-400">$</span> vb dash</div>
-            <div class="text-brand-400 mt-1 text-xs">&#9654; Dashboard at localhost:7600</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ AGENT SETUP ============ -->
-  <section class="py-20 md:py-28 bg-brand-50/40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 fade-in">
-        <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">Agent Setup</span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-          Works with your<br class="hidden sm:block">
-          <span class="text-brand-600">AI agent</span>
-        </h2>
-        <p class="text-lg text-slate-500 max-w-2xl mx-auto">
-          Tell your AI coding agent to prefix commands with <code class="text-sm bg-slate-100 px-1.5 py-0.5 rounded font-mono">vb</code>. One-time setup &mdash; then every failure is tracked automatically.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <!-- Claude Code -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 card-hover fade-in">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
-              <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900">Claude Code</h3>
-          </div>
-          <p class="text-sm text-slate-500 mb-4">Add to your project&rsquo;s <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">CLAUDE.md</code>:</p>
-          <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-300 leading-relaxed">
-            <span class="text-slate-500">## VibeBug &mdash; Failure Tracking</span><br>
-            <span class="text-slate-400 text-[11px] block mt-1">Prefix build/test/typecheck/lint<br>commands with <span class="text-brand-400">`vb`</span></span>
-            <span class="text-slate-500 mt-2 block">After fixing:</span>
-            <span class="text-brand-400">vb fix --last --summary "..."</span><br><span class="text-brand-400">--root-cause "..." --json</span>
-            <span class="text-slate-500 mt-2 block">Before starting work:</span>
-            <span class="text-brand-400">vb list</span>
-          </div>
-        </div>
-        <!-- Cursor -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 card-hover fade-in">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900">Cursor</h3>
-          </div>
-          <p class="text-sm text-slate-500 mb-4">Add to <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">.cursor/rules</code>:</p>
-          <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-300 leading-relaxed">
-            <span class="text-slate-500">## VibeBug &mdash; Failure Tracking</span><br>
-            <span class="text-slate-400 text-[11px] block mt-1">Prefix build/test/typecheck/lint<br>commands with <span class="text-brand-400">`vb`</span></span>
-            <span class="text-slate-500 mt-2 block">After fixing:</span>
-            <span class="text-brand-400">vb fix --last --summary "..."</span><br><span class="text-brand-400">--root-cause "..." --json</span>
-            <span class="text-slate-500 mt-2 block">Before starting work:</span>
-            <span class="text-brand-400">vb list</span>
-          </div>
-        </div>
-        <!-- Cline -->
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 card-hover fade-in">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900">Cline</h3>
-          </div>
-          <p class="text-sm text-slate-500 mb-4">Add to <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">.clinerules</code>:</p>
-          <div class="bg-slate-900 rounded-lg p-3 font-mono text-xs text-slate-300 leading-relaxed">
-            <span class="text-slate-500">## VibeBug &mdash; Failure Tracking</span><br>
-            <span class="text-slate-400 text-[11px] block mt-1">Prefix build/test/typecheck/lint<br>commands with <span class="text-brand-400">`vb`</span></span>
-            <span class="text-slate-500 mt-2 block">After fixing:</span>
-            <span class="text-brand-400">vb fix --last --summary "..."</span><br><span class="text-brand-400">--root-cause "..." --json</span>
-            <span class="text-slate-500 mt-2 block">Before starting work:</span>
-            <span class="text-brand-400">vb list</span>
-          </div>
-        </div>
-      </div>
-      <p class="text-center text-sm text-slate-500 mt-8">
-        <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">vb fix</code> accepts <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--summary</code>, <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--root-cause</code>, and <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--prevention</code> flags with <code class="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono">--json</code> output &mdash; designed for agents to record fixes without prompts. Works with any agent that can run terminal commands.
+      <p class="text-sm text-slate-400">
+        Works with your normal terminal workflow. No cloud. No account. No interruption.
+        <a href="#how-it-works" class="text-brand-500 hover:text-brand-600 font-medium ml-1">See how it works &rsaquo;</a>
       </p>
     </div>
   </section>
 
-  <!-- ============ WHY LOCAL FIRST ============ -->
+
+  <!-- ============ SECTION 2: SOCIAL PROOF STRIP ============ -->
+  <section class="pb-16 md:pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-block border-t border-b border-slate-100 py-4 px-8">
+        <p class="text-sm sm:text-base text-slate-400 italic">
+          For developers shipping fast with AI and tired of rediscovering the same failures.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 3: PROBLEM ============ -->
+  <section class="py-20 md:py-28 bg-brand-50/40">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center fade-in">
+      <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Why it exists</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-8">
+        Vibe coding moves fast.<br>
+        <span class="text-brand-600">Terminal failures disappear faster.</span>
+      </h2>
+
+      <div class="text-left sm:text-center space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p>When you code with AI, failures pile up quickly.</p>
+        <p>A build breaks. A test fails. A dev server throws an error. You fix one thing, move on, and two hours later the same issue is back &mdash; but now it feels new again.</p>
+        <p>Most of the problem is not just the failure itself. It's the lack of memory around it.</p>
+        <p>You lose the error in terminal scrollback. You forget what already happened. You repeat the same debugging loop. And if you are using AI to help fix things, the cost keeps stacking quietly in the background.</p>
+      </div>
+
+      <p class="mt-10 text-lg sm:text-xl font-semibold text-slate-900">
+        VibeBug gives your terminal a memory.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 4: WHAT IT IS ============ -->
   <section class="py-20 md:py-28">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="fade-in">
-          <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">Why Local-First</span>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Your data stays<br>
-            <span class="text-brand-600">with you</span>
-          </h2>
-          <p class="text-lg text-slate-500 mb-8 leading-relaxed">
-            Your failure data lives in your project under <code class="text-sm bg-slate-100 px-1.5 py-0.5 rounded font-mono">.vibebug/</code> using a local SQLite database. Inspect it, export it, delete it &mdash; whenever you want. No cloud account required.
-          </p>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-              </div>
-              <div>
-                <p class="font-semibold text-slate-900 text-sm">Fast to start</p>
-                <p class="text-xs text-slate-500">Zero setup overhead</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-              </div>
-              <div>
-                <p class="font-semibold text-slate-900 text-sm">Easy to trust</p>
-                <p class="text-xs text-slate-500">Fully inspectable data</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
-              </div>
-              <div>
-                <p class="font-semibold text-slate-900 text-sm">Stays local</p>
-                <p class="text-xs text-slate-500">No cloud dependency</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-              </div>
-              <div>
-                <p class="font-semibold text-slate-900 text-sm">Share-safe</p>
-                <p class="text-xs text-slate-500">Redacts sensitive info</p>
-              </div>
-            </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 fade-in">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">What VibeBug does</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+          A local-first CLI that quietly tracks<br class="hidden sm:block"> failures while you work.
+        </h2>
+        <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          VibeBug wraps your normal terminal commands and watches for build, test, and runtime failures in the background. You keep using your tools as usual. VibeBug simply captures what failed, groups recurring issues together, and helps you see patterns over time.
+        </p>
+      </div>
+
+      <!-- Terminal mock -->
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-slate-900 rounded-2xl p-5 sm:p-6 terminal-glow">
+          <div class="flex items-center gap-2 mb-5">
+            <div class="w-3 h-3 rounded-full bg-red-400/80"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-400/80"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400/80"></div>
+            <span class="text-xs text-slate-500 ml-2 font-mono">terminal</span>
+          </div>
+          <div class="font-mono text-sm space-y-3 text-slate-300">
+            <div><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> npm run build</div>
+            <div><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> pytest</div>
+            <div><span class="text-slate-500">$</span> <span class="text-brand-400">vb</span> cargo test</div>
           </div>
         </div>
-        <!-- Visual: Example summary in terminal -->
+      </div>
+
+      <p class="text-center text-sm text-slate-400 mt-6">Same commands. Same output. More visibility.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 5: HOW IT WORKS ============ -->
+  <section id="how-it-works" class="py-20 md:py-28 bg-brand-50/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16 fade-in">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">How it works</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          Simple in practice. Useful over time.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Step 1 -->
         <div class="fade-in">
-          <div class="bg-slate-900 rounded-2xl p-6 font-mono text-sm terminal-glow float-anim">
-            <div class="flex items-center gap-1.5 mb-4">
-              <span class="w-3 h-3 rounded-full bg-red-400"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-              <span class="w-3 h-3 rounded-full bg-green-400"></span>
-              <span class="ml-2 text-xs text-slate-500">vb summary</span>
-            </div>
-            <div class="text-slate-200 leading-relaxed">
-              <div class="text-white font-bold">VibeBug Summary &mdash; my-project</div>
-              <div class="text-slate-600">&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</div>
-              <div class="text-slate-400 mt-2">Runs: <span class="text-white">14 today</span> (5 failed) &middot; 312 total</div>
-              <div class="text-slate-400">Open captures: <span class="text-red-400">3</span> &middot; Resolved: <span class="text-brand-400">2</span> &middot; Regressions: <span class="text-amber-400">1</span></div>
-              <div class="text-slate-400">Est. AI spend: <span class="text-amber-300">$2.43</span></div>
-              <div class="mt-3 text-slate-500">Top recurring failures:</div>
-              <div class="text-slate-300 ml-2">1. <span class="text-red-400">TypeError</span>: Cannot read properties of undefined <span class="text-slate-500">(4x)</span></div>
-              <div class="text-slate-300 ml-2">2. <span class="text-red-400">TS2339</span>: Property does not exist on type <span class="text-slate-500">(3x)</span></div>
-              <div class="text-slate-300 ml-2">3. <span class="text-red-400">Module not found</span>: Can't resolve './Button' <span class="text-slate-500">(2x)</span></div>
-              <div class="mt-3 text-slate-500">Top failing commands:</div>
-              <div class="text-slate-300 ml-2">1. npm run build &mdash; <span class="text-slate-500">3x</span></div>
-              <div class="text-slate-300 ml-2">2. npm test &mdash; <span class="text-slate-500">2x</span></div>
-              <div class="text-slate-300 ml-2">3. npx tsc &mdash; <span class="text-slate-500">2x</span></div>
-            </div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">1</span>
+            <div class="hidden lg:block flex-1 h-px bg-slate-200/80"></div>
           </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Prefix any command with <code class="text-brand-600 bg-brand-50 px-1.5 py-0.5 rounded text-base">vb</code></h3>
+          <p class="text-sm text-slate-500 leading-relaxed">Run your usual build, test, or dev commands through VibeBug.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="fade-in">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">2</span>
+            <div class="hidden lg:block flex-1 h-px bg-slate-200/80"></div>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Failures are captured automatically</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">VibeBug detects failed commands and watches terminal output for runtime errors, including cases where a process keeps running.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="fade-in">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">3</span>
+            <div class="hidden lg:block flex-1 h-px bg-slate-200/80"></div>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Recurring issues are grouped together</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">Instead of cluttering your history with duplicates, VibeBug recognizes when the same failure keeps coming back.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="fade-in">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">4</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">You get a usable failure history</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">Review captures in the terminal or open the local dashboard to see recurring bugs, regressions, failing commands, and estimated AI debugging cost.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ COMMANDS ============ -->
-  <section id="commands" class="py-20 md:py-28 bg-slate-900 text-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+  <!-- ============ SECTION 6: BENEFITS ============ -->
+  <section id="benefits" class="py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-16 fade-in">
-        <span class="inline-block text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4">Commands</span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-          Simple, powerful<br class="hidden sm:block">
-          <span class="text-brand-400">CLI interface</span>
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Why it matters</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          See the problems that keep costing you time.
         </h2>
-        <p class="text-lg text-slate-400 max-w-xl mx-auto">
-          Everything you need, nothing you don't. No config files, no YAML.
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Card 1: Recurring failures -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover fade-in">
+          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">Spot recurring failures</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">See which issues keep returning instead of treating every failure like a brand-new problem.</p>
+        </div>
+
+        <!-- Card 2: Regressions -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover fade-in">
+          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">Catch regressions</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">When something breaks again after being fixed, VibeBug flags it so it does not silently re-enter the loop.</p>
+        </div>
+
+        <!-- Card 3: AI cost -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover fade-in">
+          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">Understand AI debugging cost</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">Estimate how much repeated failures are costing you in AI-assisted debugging.</p>
+        </div>
+
+        <!-- Card 4: Context -->
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-6 text-center card-hover fade-in">
+          <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1.5">Keep useful context</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">Track failure history with command, git context, and fixes so debugging does not start from zero every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 7: DASHBOARD ============ -->
+  <section class="py-20 md:py-28 bg-brand-50/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 fade-in">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Local dashboard</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+          A clearer view of what keeps breaking.
+        </h2>
+        <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          VibeBug includes a local dashboard that turns terminal noise into something you can review and learn from. See open captures, recurring failures, regressions, fix history, failing commands, and project-level patterns in one place.
         </p>
       </div>
+
+      <!-- Browser frame + screenshot -->
+      <div class="relative max-w-4xl mx-auto">
+        <div class="bg-slate-800 rounded-t-xl p-3 flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-400/60"></div>
+          <div class="w-3 h-3 rounded-full bg-amber-400/60"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400/60"></div>
+          <div class="flex-1 bg-slate-700/50 rounded-md h-6 flex items-center px-3 ml-2">
+            <span class="text-xs text-slate-400 font-mono">localhost:7600</span>
+          </div>
+        </div>
+        <img
+          src="assets/vibebug-dashboard-overview.png"
+          alt="VibeBug dashboard showing captured failures, regressions, and debugging insights"
+          class="w-full rounded-b-xl border border-t-0 border-slate-200/50 shadow-2xl"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 8: KEY COMMANDS ============ -->
+  <section id="commands" class="py-20 md:py-28 bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16 fade-in">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-400 mb-4">Core commands</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+          Useful in the terminal.<br class="hidden sm:block"> Not just in the dashboard.
+        </h2>
+      </div>
+
       <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 fade-in">
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
           <code class="text-brand-400 font-mono text-sm">vb &lt;command&gt;</code>
-          <p class="text-slate-400 text-sm mt-2">Wrap a command and auto-capture failures</p>
-        </div>
-        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
-          <code class="text-brand-400 font-mono text-sm">vb init</code>
-          <p class="text-slate-400 text-sm mt-2">Initialize VibeBug in the current project</p>
+          <p class="text-slate-400 text-sm mt-2">Run a command while VibeBug watches for failures</p>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
           <code class="text-brand-400 font-mono text-sm">vb dash</code>
           <p class="text-slate-400 text-sm mt-2">Open the local dashboard</p>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
-          <code class="text-brand-400 font-mono text-sm">vb fix --last --summary "..."</code>
-          <p class="text-slate-400 text-sm mt-2">Record what fixed the latest capture</p>
+          <code class="text-brand-400 font-mono text-sm">vb list</code>
+          <p class="text-slate-400 text-sm mt-2">View captured failures in the terminal</p>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
-          <code class="text-brand-400 font-mono text-sm">vb list</code>
-          <p class="text-slate-400 text-sm mt-2">List all captured failures</p>
+          <code class="text-brand-400 font-mono text-sm">vb fix --last</code>
+          <p class="text-slate-400 text-sm mt-2">Record what fixed the latest failure</p>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
           <code class="text-brand-400 font-mono text-sm">vb summary</code>
-          <p class="text-slate-400 text-sm mt-2">Print a compact share-safe summary</p>
+          <p class="text-slate-400 text-sm mt-2">Generate a shareable project failure summary</p>
         </div>
         <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
-          <code class="text-brand-400 font-mono text-sm">vb export --format markdown</code>
-          <p class="text-slate-400 text-sm mt-2">Export a share-safe markdown report</p>
+          <code class="text-brand-400 font-mono text-sm">vb export</code>
+          <p class="text-slate-400 text-sm mt-2">Export data as JSON, CSV, or Markdown</p>
         </div>
-        <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
-          <code class="text-brand-400 font-mono text-sm">vb ignore list</code>
-          <p class="text-slate-400 text-sm mt-2">View ignored noise patterns</p>
+        <div class="sm:col-span-2 bg-slate-800/60 border border-slate-700/50 rounded-xl p-5">
+          <code class="text-brand-400 font-mono text-sm">vb ignore</code>
+          <p class="text-slate-400 text-sm mt-2">Suppress noisy patterns</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ FAQ ============ -->
-  <section id="faq" class="py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 fade-in">
-        <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">FAQ</span>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-          Common questions,<br class="hidden sm:block">
-          <span class="text-brand-600">quick answers</span>
-        </h2>
-      </div>
-      <div class="divide-y divide-slate-200 fade-in">
-        <!-- FAQ: Who is it for -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Who is VibeBug for?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">Solo builders, indie hackers, and tool makers who move fast with AI and keep running into the same failures. If errors disappear in your terminal scrollback, you forget what you already tried, or the same breakage keeps coming back &mdash; VibeBug is for you. No cloud setup, no team overhead &mdash; just a local failure memory for your project.</p>
-          </div>
-        </div>
-        <!-- FAQ 1 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Does VibeBug slow down my commands?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">No. VibeBug runs your command exactly as you would, then captures the output if it fails. There is no meaningful overhead.</p>
-          </div>
-        </div>
-        <!-- FAQ 2 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Does VibeBug send my logs to the cloud?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">No. VibeBug is local-first. Your data stays in your project unless you choose to export or share it.</p>
-          </div>
-        </div>
-        <!-- FAQ 3 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Is it safe to share summaries?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">VibeBug is designed to make summaries share-safe by default, but you should still review outputs before posting publicly.</p>
-          </div>
-        </div>
-        <!-- FAQ 4 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Does it work only with AI tools?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">No. VibeBug works with any command that can fail. But it is especially useful when coding with AI, because failures tend to be more repetitive and harder to keep track of.</p>
-          </div>
-        </div>
-        <!-- FAQ 5 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">What kinds of failures does VibeBug track?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">Build errors, test failures, type errors, runtime crashes &mdash; anything that produces a non-zero exit code. VibeBug captures the output, groups recurring failures, and tracks regressions automatically.</p>
-          </div>
-        </div>
-        <!-- FAQ 6 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Does it replace GitHub Issues, Linear, or Jira?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">No. VibeBug is for local failure tracking and debugging visibility. It helps you understand recurring breakage during development. It is not a replacement for full team planning or project management tools.</p>
-          </div>
-        </div>
-        <!-- FAQ 7 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Is VibeBug a bug tracker?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">Not in the traditional sense. VibeBug doesn&rsquo;t do manual filing, assignment, or project management. It automatically captures command-line failures &mdash; build errors, test failures, type errors, runtime crashes &mdash; groups recurring ones, and tracks regressions. Think of it as a failure memory for your terminal.</p>
-          </div>
-        </div>
-        <!-- FAQ 8 -->
-        <div class="faq-item">
-          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
-            <span class="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">How does AI cost estimation work?</span>
-            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          </button>
-          <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">Every time VibeBug captures a failure, it estimates how many tokens the error log would consume and calculates an approximate cost based on current model pricing (Claude Sonnet by default). It&rsquo;s a rough estimate for visibility &mdash; not a billing tool &mdash; designed to help you spot which recurring failures are eating the most AI debugging effort.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ INSTALL CTA ============ -->
-  <section id="install" class="py-20 md:py-28 bg-brand-50/40">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-      <span class="inline-block text-xs font-semibold tracking-widest text-brand-600 uppercase mb-4">Get Started</span>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-        Start tracking<br class="hidden sm:block">
-        <span class="text-brand-600">what breaks</span>
+  <!-- ============ SECTION 9: DIFFERENTIATOR ============ -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center fade-in">
+      <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Why VibeBug feels different</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-8">
+        Built for flow, not extra process.
       </h2>
-      <p class="text-lg text-slate-500 max-w-lg mx-auto mb-10">
-        One install. No account. No config. Just prefix your commands with <code class="bg-white border border-slate-200 px-1.5 py-0.5 rounded font-mono text-sm">vb</code> and you're tracking.
+
+      <div class="space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p>Most debugging tools ask you to stop what you are doing and report something manually.</p>
+        <p>VibeBug takes the opposite approach.</p>
+        <p>It works passively in the background while you keep coding. No account setup. No cloud dependency. No issue-filing ceremony. No forced workflow change.</p>
+        <p>It is designed for developers who want more visibility without adding more overhead.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 10: LOCAL-FIRST / PRIVACY ============ -->
+  <section class="py-20 md:py-28 bg-brand-50/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: text -->
+        <div class="fade-in">
+          <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Local-first</span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-6">
+            Your failure data stays with you.
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
+            VibeBug stores its data locally in your project. No cloud account is required. When you generate summaries or exports, sensitive details like paths and tokens can be sanitized to make sharing safer.
+          </p>
+
+          <!-- Trust badges -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Fast to start</p>
+                <p class="text-xs text-slate-500">One install, one init</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Easy to trust</p>
+                <p class="text-xs text-slate-500">Open source, MIT licensed</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Stays local</p>
+                <p class="text-xs text-slate-500">SQLite in your project</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Share-safe</p>
+                <p class="text-xs text-slate-500">Sanitized exports</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-8 text-sm text-slate-500 font-medium">No cloud by default. No account required. Share on your terms.</p>
+        </div>
+
+        <!-- Right: terminal mock -->
+        <div class="fade-in">
+          <div class="bg-slate-900 rounded-2xl p-5 sm:p-6 terminal-glow float-anim">
+            <div class="flex items-center gap-2 mb-5">
+              <div class="w-3 h-3 rounded-full bg-red-400/80"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-400/80"></div>
+              <div class="w-3 h-3 rounded-full bg-green-400/80"></div>
+              <span class="text-xs text-slate-500 ml-2 font-mono">vb summary</span>
+            </div>
+            <div class="font-mono text-xs sm:text-sm space-y-1 text-slate-400">
+              <div class="text-slate-300 font-medium mb-2">VibeBug Summary &mdash; my-project</div>
+              <div class="border-t border-slate-700/50 my-2"></div>
+              <div>Runs: <span class="text-white">14 today</span> (5 failed) &middot; 312 total</div>
+              <div>Open: <span class="text-amber-400">3</span> &middot; Resolved: <span class="text-green-400">2</span> &middot; Regressions: <span class="text-red-400">1</span></div>
+              <div>Est. AI spend: <span class="text-amber-300">$2.43</span></div>
+              <div class="border-t border-slate-700/50 my-2"></div>
+              <div class="text-slate-300 font-medium">Top failing commands</div>
+              <div>&nbsp;&nbsp;npm run build <span class="text-red-400">(7 failures)</span></div>
+              <div>&nbsp;&nbsp;pytest <span class="text-red-400">(3 failures)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 11: WHO IT'S FOR ============ -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-in">
+      <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-600 mb-4">Who it's for</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+        Made for developers coding fast with AI.
+      </h2>
+      <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-6">
+        VibeBug is especially useful for developers who:
       </p>
+      <ul class="text-base sm:text-lg text-slate-600 space-y-2 max-w-md mx-auto text-left mb-10">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+          <span>Work heavily with AI coding tools</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+          <span>Run lots of terminal commands during build and debugging</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+          <span>Keep hitting repeat failures across the same project</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+          <span>Want lightweight visibility without changing how they work</span>
+        </li>
+      </ul>
+
+      <!-- Audience chips -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <span class="bg-brand-100/60 border border-brand-200/60 rounded-full px-4 py-1.5 text-sm font-medium text-brand-700">Indie builders</span>
+        <span class="bg-brand-100/60 border border-brand-200/60 rounded-full px-4 py-1.5 text-sm font-medium text-brand-700">AI-heavy developers</span>
+        <span class="bg-brand-100/60 border border-brand-200/60 rounded-full px-4 py-1.5 text-sm font-medium text-brand-700">Open-source tool makers</span>
+        <span class="bg-brand-100/60 border border-brand-200/60 rounded-full px-4 py-1.5 text-sm font-medium text-brand-700">Fast-moving side projects</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 12: SAMPLE SUMMARY ============ -->
+  <section class="py-20 md:py-28 bg-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-400 mb-4">What you get</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+          A summary you can actually use or share.
+        </h2>
+        <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          VibeBug helps turn raw terminal failures into a project-level summary of what is happening.
+        </p>
+      </div>
+
+      <!-- Terminal mock with sample summary -->
+      <div class="max-w-2xl mx-auto bg-slate-800 rounded-2xl p-5 sm:p-6 terminal-glow">
+        <div class="flex items-center gap-2 mb-5">
+          <div class="w-3 h-3 rounded-full bg-red-400/80"></div>
+          <div class="w-3 h-3 rounded-full bg-amber-400/80"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400/80"></div>
+          <span class="text-xs text-slate-500 ml-2 font-mono">vb summary</span>
+        </div>
+        <div class="font-mono text-xs sm:text-sm space-y-1 text-slate-400">
+          <div class="text-white font-medium">Project Failure Summary</div>
+          <div class="my-1"></div>
+          <div>Open captures: <span class="text-amber-400">12</span></div>
+          <div>Recurring failures: <span class="text-red-400">4</span></div>
+          <div>Regressions: <span class="text-red-400">2</span></div>
+          <div>Estimated AI debugging cost: <span class="text-amber-300">$18.40</span></div>
+          <div class="border-t border-slate-700/50 my-3"></div>
+          <div class="text-slate-300 font-medium">Top recurring failures</div>
+          <div>&nbsp;&nbsp;1. TypeScript build error in <span class="text-slate-300">src/lib/parser.ts</span></div>
+          <div>&nbsp;&nbsp;2. Pytest fixture setup failure in <span class="text-slate-300">tests/api/test_jobs.py</span></div>
+          <div>&nbsp;&nbsp;3. Dev server runtime error: <span class="text-red-400">missing env var STRIPE_SECRET_KEY</span></div>
+          <div class="border-t border-slate-700/50 my-3"></div>
+          <div class="text-slate-300 font-medium">Most failing commands</div>
+          <div>&nbsp;&nbsp;- npm run build</div>
+          <div>&nbsp;&nbsp;- pytest</div>
+          <div>&nbsp;&nbsp;- npm run dev</div>
+          <div class="border-t border-slate-700/50 my-3"></div>
+          <div class="text-slate-300 font-medium">Latest regression</div>
+          <div>&nbsp;&nbsp;- Previously resolved build error returned on <span class="text-amber-400">feature/onboarding-redesign</span></div>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-slate-500 mt-6">Useful for personal review, team context, or sharing what actually keeps breaking.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 13: FAQ ============ -->
+  <section id="faq" class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">FAQ</h2>
+      </div>
+
+      <div class="divide-y divide-slate-200 fade-in">
+        <!-- FAQ 1 -->
+        <div>
+          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
+            <span class="text-base sm:text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Does VibeBug change how my command runs?</span>
+            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </button>
+          <div class="faq-content">
+            <p class="pb-6 text-slate-500 leading-relaxed">No. Your command runs normally and output still flows through the terminal as expected.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div>
+          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
+            <span class="text-base sm:text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Does it send my logs to the cloud?</span>
+            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </button>
+          <div class="faq-content">
+            <p class="pb-6 text-slate-500 leading-relaxed">No. VibeBug is local-first and stores data locally by default.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div>
+          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
+            <span class="text-base sm:text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Do I need to change my workflow?</span>
+            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </button>
+          <div class="faq-content">
+            <p class="pb-6 text-slate-500 leading-relaxed">No. You just prefix commands with <code class="text-brand-600 bg-brand-50 px-1.5 py-0.5 rounded text-sm">vb</code> and keep working as usual.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div>
+          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
+            <span class="text-base sm:text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Is it only for AI coding?</span>
+            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </button>
+          <div class="faq-content">
+            <p class="pb-6 text-slate-500 leading-relaxed">No, but it is especially useful for AI-assisted workflows where failures are frequent, repeated, and easy to lose in terminal output.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div>
+          <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false">
+            <span class="text-base sm:text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors pr-4">Can I share results safely?</span>
+            <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </button>
+          <div class="faq-content">
+            <p class="pb-6 text-slate-500 leading-relaxed">Yes. Summaries and exports are designed to be share-safe, with sanitization for sensitive details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ SECTION 14: CLOSING CTA ============ -->
+  <section id="install" class="py-20 md:py-28 bg-brand-50/40">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center fade-in">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+        Know what keeps breaking.<br>Fix it once. Notice when it comes back.
+      </h2>
+      <p class="text-base sm:text-lg text-slate-500 max-w-xl mx-auto leading-relaxed mb-10">
+        VibeBug helps you turn terminal failures into useful memory &mdash; without slowing down how you build.
+      </p>
+
       <!-- Install command -->
-      <div class="relative inline-flex items-center bg-slate-900 rounded-2xl px-6 py-4 mb-8 terminal-glow">
+      <div class="relative inline-flex items-center bg-slate-900 rounded-2xl px-6 py-4 terminal-glow">
         <code class="text-brand-400 font-mono text-base md:text-lg pr-10">npm install -g vibebug</code>
-        <button onclick="copyInstall()" class="copy-btn absolute right-3 top-1/2 -translate-y-1/2 p-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800" aria-label="Copy install command">
-          <svg id="copy-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
-          <svg id="check-icon" class="w-5 h-5 hidden text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        <button onclick="copyInstall()" class="copy-btn absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors p-1" title="Copy to clipboard">
+          <svg id="copy-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <svg id="check-icon" class="w-5 h-5 hidden text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
         </button>
       </div>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://github.com/flytying/vibebug" target="_blank" class="flex items-center gap-2 text-base font-semibold text-slate-700 hover:text-slate-900 transition-colors">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8 text-sm">
+        <a href="https://github.com/flytying/vibebug" target="_blank" class="flex items-center gap-1.5 text-slate-500 hover:text-slate-900 transition-colors font-medium">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           Star on GitHub
         </a>
-        <span class="text-slate-300 hidden sm:block">&middot;</span>
-        <span class="text-sm text-slate-400">Open Source &middot; MIT Licensed</span>
+        <span class="hidden sm:inline text-slate-300">|</span>
+        <span class="text-slate-400">Open Source &middot; MIT Licensed</span>
       </div>
+
+      <p class="text-xs text-slate-400 mt-6">Local-first CLI &bull; No account &bull; Built for fast AI-assisted coding workflows</p>
     </div>
   </section>
+
 
   <!-- ============ FOOTER ============ -->
   <footer class="py-12 border-t border-slate-100">
@@ -864,13 +783,13 @@
           <span class="text-[15px] font-semibold tracking-tight text-slate-900">VibeBug</span>
         </div>
         <div class="flex items-center gap-6 text-sm text-slate-500">
-          <a href="#features" class="hover:text-slate-900 transition-colors">Features</a>
           <a href="#how-it-works" class="hover:text-slate-900 transition-colors">How It Works</a>
+          <a href="#benefits" class="hover:text-slate-900 transition-colors">Benefits</a>
           <a href="#commands" class="hover:text-slate-900 transition-colors">Commands</a>
           <a href="#faq" class="hover:text-slate-900 transition-colors">FAQ</a>
           <a href="https://github.com/flytying/vibebug" target="_blank" class="hover:text-slate-900 transition-colors">GitHub</a>
         </div>
-        <p class="text-sm text-slate-400">Built by <a href="https://github.com/flytying" target="_blank" class="text-slate-500 hover:text-slate-900 transition-colors">Jordan Hilario</a> · MIT License</p>
+        <p class="text-sm text-slate-400">Built by <a href="https://github.com/flytying" target="_blank" class="text-slate-500 hover:text-slate-900 transition-colors">Jordan Hilario</a> &middot; MIT License</p>
       </div>
     </div>
   </footer>
