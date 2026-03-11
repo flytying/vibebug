@@ -2,7 +2,7 @@
 
 **Your terminal failures, remembered automatically.**
 
-A local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.
+A local-first CLI that detects build, test, lint, and runtime failures in real time — across JavaScript, TypeScript, Python, Rust, Go, and common build tools. See what keeps breaking, what came back, and what debugging is costing you.
 
 ![VibeBug dashboard overview](./docs/assets/vibebug-dashboard-overview.png)
 
@@ -24,7 +24,7 @@ VibeBug gives your terminal a memory.
 
 A local-first CLI that quietly tracks failures while you work.
 
-VibeBug wraps your normal terminal commands and watches for build, test, and runtime failures in the background. You keep using your tools as usual. VibeBug simply captures what failed, groups recurring issues together, and helps you see patterns over time.
+VibeBug wraps your normal terminal commands and watches for failures in real time. It catches non-zero exit codes, detects runtime errors from terminal output — even from long-running processes like dev servers — and automatically classifies each failure as build, test, lint, or runtime. It works across JavaScript, TypeScript, Python, Rust, Go, and common build tools. You keep using your tools as usual.
 
 - **Spot recurring failures** — see which issues keep returning instead of treating every failure like a brand-new problem
 - **Catch regressions** — when something breaks again after being fixed, VibeBug flags it so it doesn't silently re-enter the loop
@@ -44,7 +44,7 @@ vb cargo test
 ```
 
 1. **Prefix with `vb`** — run your usual build, test, or dev commands through VibeBug
-2. **Failures are captured** — VibeBug detects failed commands and watches for runtime errors in terminal output
+2. **Failures are captured** — VibeBug catches non-zero exit codes and detects runtime errors from terminal output in real time — even from long-running dev servers. Each failure is classified as build, test, lint, or runtime
 3. **See what breaks** — review captures in the terminal or open the local dashboard to see recurring bugs, regressions, and estimated AI debugging cost
 
 ---
@@ -268,7 +268,7 @@ Yes. Summaries and exports are designed to be share-safe, with sanitization for 
 
 **What kinds of failures does VibeBug track?**
 
-VibeBug captures failed commands and can also detect runtime errors from terminal output, including cases where a process keeps running instead of exiting immediately.
+VibeBug captures failed commands (non-zero exit codes) and also detects runtime errors from terminal output in real time — including from long-running processes like dev servers that don't exit on error. It recognizes patterns across many languages and tools (JavaScript, TypeScript, Python, Rust, Go, and common build tools), and automatically classifies each failure as a build, test, lint, or runtime error based on the command that triggered it.
 
 **How does AI cost estimation work?**
 

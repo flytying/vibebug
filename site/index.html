@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VibeBug — Your terminal failures, remembered automatically</title>
-  <meta name="description" content="VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.">
+  <meta name="description" content="VibeBug is a local-first CLI that detects build, test, lint, and runtime failures in real time — across JavaScript, TypeScript, Python, Rust, Go, and more. See what keeps breaking, what came back, and what it's costing you.">
 
   <!-- SEO -->
   <link rel="canonical" href="https://vibebug.dev/">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vibebug.dev/">
   <meta property="og:title" content="VibeBug — Your terminal failures, remembered automatically">
-  <meta property="og:description" content="VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.">
+  <meta property="og:description" content="VibeBug is a local-first CLI that detects build, test, lint, and runtime failures in real time — across JavaScript, TypeScript, Python, Rust, Go, and more. See what keeps breaking, what came back, and what it's costing you.">
   <meta property="og:image" content="https://vibebug.dev/assets/vibebug-dashboard-overview.png">
   <meta property="og:site_name" content="VibeBug">
   <meta property="og:locale" content="en_US">
@@ -24,7 +24,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VibeBug — Your terminal failures, remembered automatically">
-  <meta name="twitter:description" content="VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI — so you can see what keeps breaking, what came back, and what debugging is costing you.">
+  <meta name="twitter:description" content="VibeBug is a local-first CLI that detects build, test, lint, and runtime failures in real time — across JavaScript, TypeScript, Python, Rust, Go, and more. See what keeps breaking, what came back, and what it's costing you.">
   <meta name="twitter:image" content="https://vibebug.dev/assets/vibebug-dashboard-overview.png">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c5cfc'/><path d='M30 42h40M30 58h40M38 28l4 8M62 28l-4 8M38 72l4-8M62 72l-4-8M42 36c0-4.4 3.6-8 8-8s8 3.6 8 8M42 36v24c0 4.4 3.6 8 8 8s8-3.6 8-8V36M50 36v32' stroke='white' stroke-width='5' stroke-linecap='round' fill='none'/></svg>">
@@ -79,7 +79,7 @@
     "@type": "SoftwareApplication",
     "name": "VibeBug",
     "url": "https://vibebug.dev",
-    "description": "VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI.",
+    "description": "VibeBug is a local-first CLI that detects build, test, lint, and runtime failures in real time across JavaScript, TypeScript, Python, Rust, and Go.",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "macOS, Linux, Windows",
     "offers": {
@@ -147,7 +147,7 @@
         "name": "What kinds of failures does VibeBug track?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "VibeBug captures failed commands and can also detect runtime errors from terminal output, including cases where a process keeps running instead of exiting immediately."
+          "text": "VibeBug captures failed commands (non-zero exit codes) and also detects runtime errors from terminal output in real time — including from long-running processes like dev servers that don't exit on error. It recognizes patterns across many languages and tools (JavaScript, TypeScript, Python, Rust, Go, and common build tools), and automatically classifies each failure as a build, test, lint, or runtime error based on the command that triggered it."
         }
       },
       {
@@ -223,7 +223,7 @@
       </h1>
 
       <p class="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed mb-10">
-        VibeBug is a local-first CLI that captures build, test, and runtime failures while you code with AI &mdash; so you can see what keeps breaking, what came back, and what debugging is costing you.
+        VibeBug is a local-first CLI that detects build, test, lint, and runtime failures in real time &mdash; across JavaScript, TypeScript, Python, Rust, Go, and common build tools. See what keeps breaking, what came back, and what debugging is costing you.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -315,7 +315,7 @@
           A local-first CLI that quietly tracks<br class="hidden sm:block"> failures while you work.
         </h2>
         <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-          VibeBug wraps your normal terminal commands and watches for build, test, and runtime failures in the background. You keep using your tools as usual. VibeBug simply captures what failed, groups recurring issues together, and helps you see patterns over time.
+          VibeBug wraps your normal terminal commands and watches for failures in real time. It catches non-zero exit codes, detects runtime errors from terminal output &mdash; even from long-running processes like dev servers &mdash; and automatically classifies each failure as build, test, lint, or runtime. It works across JavaScript, TypeScript, Python, Rust, Go, and common build tools. You keep using your tools as usual.
         </p>
       </div>
 
@@ -377,7 +377,7 @@
         <div class="fade-in">
           <span class="inline-flex items-center justify-center w-11 h-11 bg-brand-500 text-white rounded-full font-bold text-sm mb-5">2</span>
           <h3 class="text-xl font-bold text-slate-900 mb-2">Failures Are Captured</h3>
-          <p class="text-slate-500 leading-relaxed mb-5">VibeBug detects failed commands and watches terminal output for runtime errors. Recurring issues are grouped together.</p>
+          <p class="text-slate-500 leading-relaxed mb-5">VibeBug catches non-zero exit codes and detects runtime errors from terminal output in real time &mdash; even from long-running dev servers. Each failure is automatically classified as build, test, lint, or runtime, and recurring issues are grouped together.</p>
           <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm terminal-glow">
             <div class="flex items-center gap-1.5 mb-3">
               <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
@@ -854,7 +854,7 @@
             <svg class="faq-chevron w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
           </button>
           <div class="faq-content">
-            <p class="pb-6 text-slate-500 leading-relaxed">VibeBug captures failed commands and can also detect runtime errors from terminal output, including cases where a process keeps running instead of exiting immediately.</p>
+            <p class="pb-6 text-slate-500 leading-relaxed">VibeBug captures failed commands (non-zero exit codes) and also detects runtime errors from terminal output in real time — including from long-running processes like dev servers that don't exit on error. It recognizes patterns across many languages and tools (JavaScript, TypeScript, Python, Rust, Go, and common build tools), and automatically classifies each failure as a build, test, lint, or runtime error based on the command that triggered it.</p>
           </div>
         </div>
 
